@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#808080">
+    <title>heelYeah!</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.jpg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+    <body style = "background-color: #CDCCCC;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+     
+<body>
+
+    <nav class="header">
+        <div class="logo">
+            <a href="{{ url_for('views.homepage') }}">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" width="170" height="50" alt="logo">
+            </a>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn">New Arrivals</button>
+            <button class="nav-btn">Men</button>
+            <button class="nav-btn">Women</button>
+            
+            <div class="dropdown">
+                <button class="nav-btn dropdown-btn">Brands</button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Nike</a></li>
+                    <li><a href="#">Adidas</a></li>
+                    <li><a href="#">New Balance</a></li>
+                    <li><a href="#">Converse</a></li>
+                    <li><a href="#">Puma</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nav-icons">
+            <a href="login.html"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </nav><br>
+
+
+    <header class="hero-carousel">
+        <div class="slides">
+            <div class="slide active">
+                <img src="{{ url_for('static', filename='images/nike.jpg') }}" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/adidas.jpg') }}" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/puma.jpg') }}" alt="Slide 3">
+            </div>
+        </div>
+
+        
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </header><br>
+
+    <div class="brand-logos">
+        <img src="{{ url_for('static', filename='images/lgN.png') }}" alt="Nike">
+        <img src="{{ url_for('static', filename='images/lgA.png') }}" alt="Adidas">
+        <img src="{{ url_for('static', filename='images/lgB.png') }}" alt="New Balance">
+        <img src="{{ url_for('static', filename='images/lgC.png') }}" alt="Converse">
+        <img src="{{ url_for('static', filename='images/lg.png') }}" alt="Puma">
+    </div><br>
+    
+    <div class="slider-container">
+        <div class="slider">
+            <img src="{{ url_for('static', filename='images/posterNK.png') }}" alt="Brand 6" class="clone">
+            <img src="{{ url_for('static', filename='images/posterN.png') }}" alt="Brand 1">
+            <img src="{{ url_for('static', filename='images/posterA.png') }}" alt="Brand 2">
+            <img src="{{ url_for('static', filename='images/posterNB.png') }}" alt="Brand 3">
+            <img src="{{ url_for('static', filename='images/posterC.png') }}" alt="Brand 4">
+            <img src="{{ url_for('static', filename='images/posterP.png') }}" alt="Brand 5">
+            <img src="{{ url_for('static', filename='images/posterNK.png') }}" alt="Brand 6">
+            <img src="{{ url_for('static', filename='images/posterN.png') }}" alt="Brand 1" class="clone"> 
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1>Shop by Gender</h1>
+        <div class="shop-categories">
+            <div class="category">
+                <img src="{{ url_for('static', filename='images/MAD.jpg') }}" alt="Men">
+                <div class="category-title">MEN</div>
+            </div>
+            <div class="category">
+                <img src="{{ url_for('static', filename='images/ADWM.jpg') }}" alt="Women">
+                <div class="category-title">WOMEN</div>
+            </div>
+            <div class="category new-arrivals">
+                <img src="{{ url_for('static', filename='images/NA.jpg') }}" alt="New Arrivals">
+                <div class="category-title">NEW ARRIVALS</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li>About us</li>
+                    <li>Terms & Conditions</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li>FAQ</li>
+                    <li>Contact us</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+    
+    
+</body>
+</html>
