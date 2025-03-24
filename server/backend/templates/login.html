@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#808080">
+    <title>heelYeah!</title>
+    <link rel="icon" href="icon.jpg" type="image/x-icon"> 
+    <link rel="stylesheet" type="text/css" href="login.css" />
+    <body style = "background-color: #CDCCCC;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+     
+<body>
+
+    <nav class="header">
+        <div class="logo">
+            <a href="homepage.html">
+                <img src="logo.jpg" width="170" height="50" alt="logo">
+            </a>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn">New Arrivals</button>
+            <button class="nav-btn">Men</button>
+            <button class="nav-btn">Women</button>
+            
+            <div class="dropdown">
+                <button class="nav-btn dropdown-btn">Brands</button>
+                <ul class="dropdown-menu">
+                    <li><a href="nike.html">Nike</a></li>
+                    <li><a href="#">Adidas</a></li>
+                    <li><a href="#">New Balance</a></li>
+                    <li><a href="#">Converse</a></li>
+                    <li><a href="#">Puma</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nav-icons">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </nav><br>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <div class="password-container">
+                    <input type="password" id="signup-password" placeholder="Password">
+                    <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('signup-password', this)"></i>
+                </div>
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <span>or use your email password</span>
+                <input type="email" placeholder="Email">
+                <div class="password-container">
+                    <input type="password" id="signin-password" placeholder="Password">
+                    <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('signin-password', this)"></i>
+                </div>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome!</h1>
+                    <p>Already have an account?</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Welcome!</h1>
+                    <p>Don't have an account?</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li>About us</li>
+                    <li>Terms & Conditions</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li>FAQ</li>
+                    <li>Contact us</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="login.js"></script>
+    
+    
+</body>
+</html>
