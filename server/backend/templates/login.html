@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#808080">
     <title>heelYeah!</title>
-    <link rel="icon" href="icon.jpg" type="image/x-icon"> 
-    <link rel="stylesheet" type="text/css" href="login.css" />
-    <body style = "background-color: #CDCCCC;">
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.jpg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <body style="background-color: #CDCCCC;">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 </head>
      
 <body>
 
     <nav class="header">
         <div class="logo">
-            <a href="homepage.html">
-                <img src="logo.jpg" width="170" height="50" alt="logo">
+            <a href="{{ url_for('views.homepage') }}">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" width="170" height="50" alt="logo">
             </a>
         </div>
 
@@ -29,7 +28,7 @@
             <div class="dropdown">
                 <button class="nav-btn dropdown-btn">Brands</button>
                 <ul class="dropdown-menu">
-                    <li><a href="nike.html">Nike</a></li>
+                    <li><a href="#">Nike</a></li>
                     <li><a href="#">Adidas</a></li>
                     <li><a href="#">New Balance</a></li>
                     <li><a href="#">Converse</a></li>
@@ -44,31 +43,36 @@
     </nav><br>
 
     <div class="container" id="container">
+        <!-- Sign Up Form -->
         <div class="form-container sign-up">
-            <form>
+            <form action="{{ url_for('auth.signup') }}" method="POST">
                 <h1>Create Account</h1>
                 <span>or use your email for registration</span>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
                 <div class="password-container">
-                    <input type="password" id="signup-password" placeholder="Password">
+                    <input type="password" name="password" id="signup-password" placeholder="Password" required>
                     <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('signup-password', this)"></i>
                 </div>
-                <button>Sign Up</button>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
+
+        <!-- Sign In Form -->
         <div class="form-container sign-in">
-            <form>
+            <form action="{{ url_for('auth.login') }}" method="POST">
                 <h1>Sign In</h1>
                 <span>or use your email password</span>
-                <input type="email" placeholder="Email">
+                <input type="email" name="email" placeholder="Email" required>
                 <div class="password-container">
-                    <input type="password" id="signin-password" placeholder="Password">
+                    <input type="password" name="password" id="signin-password" placeholder="Password" required>
                     <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('signin-password', this)"></i>
                 </div>
-                <button>Sign In</button>
+                <button type="submit">Sign In</button>
             </form>
         </div>
+
+        <!-- Toggle Container -->
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
@@ -105,8 +109,6 @@
         </div>
     </footer>
 
-    <script src="login.js"></script>
-    
-    
+    <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
 </body>
 </html>
