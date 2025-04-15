@@ -1,0 +1,186 @@
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+    if (index >= slides.length) currentIndex = 0;
+    else if (index < 0) currentIndex = slides.length - 1;
+    else currentIndex = index;
+
+    document.querySelector('.slides').style.transform = `translateX(${-currentIndex * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[currentIndex].classList.add('active');
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.querySelector(".dropdown");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+
+    dropdown.addEventListener("mouseenter", () => {
+        dropdownMenu.style.display = "block";
+        setTimeout(() => {
+            dropdownMenu.style.opacity = "1";
+            dropdownMenu.style.transform = "translateY(0)";
+        }, 10);
+    });
+
+    dropdown.addEventListener("mouseleave", () => {
+        dropdownMenu.style.opacity = "0";
+        dropdownMenu.style.transform = "translateY(10px)";
+        setTimeout(() => {
+            dropdownMenu.style.display = "none";
+        }, 300);
+    });
+
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartCount = document.querySelector(".cart-count");
+        if (cartCount) {
+            // Count total quantity in cart
+            const totalQty = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            cartCount.textContent = totalQty;
+        }
+    }
+
+    updateCartCount();
+
+    const products = [
+        { img: "n1.png", title: "Dunk Low Retro Men’s Basketball Shoes - White", price: "₱5,495", gender: "men" },
+        { img: "n2.png", title: "Cortez Women’s Sneakers - Black", price: "₱4,995.00", gender: "women" },
+        { img: "n3.png", title: "Nike Zoom Vomero 5 Men’s Sneakers - Wolf Gray", price: "₱8,895.00", gender: "men" },
+        { img: "n4.png", title: "Air Jordan 1 Low Men’s - Bred Toe", price: "₱6,195.00", gender: "men" },
+        { img: "n5.png", title: "Nike Air Force 1 '07 Women’s - White", price: "₱5,495.00", gender: "women" },
+        { img: "n6.png", title: "Book 1 EP Men’s Basketball Shoes - Barely Grape", price: "₱7,895.00", gender: "men" },
+        { img: "n7.png", title: "Air Jordan 4 Retro Men’s Basketball Shoes - Black", price: "₱11,395.00", gender: "men" },
+        { img: "n8.png", title: "Air Jordan 11 Retro Men’s Basketball Shoes - White", price: "₱11,895.00", gender: "men" },
+        { img: "n9.png", title: "Air Jordan 11 Retro Low Men’s Basketball Shoes - White/Navy", price: "₱10,295.00", gender: "men" },
+        { img: "n10.png", title: "Zoom Vomero 5 Women’s Sneaker Shoes - Vast Gray", price: "₱9,395.00", gender: "women" },
+        { img: "n11.png", title: "Dunk Low Sail Women’s - Brown ", price: "₱5,495.00", gender: "women" },
+        { img: "n12.png", title: "Air Jordan 11 Retro Women’s Basketball Shoes - Black", price: "₱12,295.00", gender: "women" },
+        { img: "n13.png", title: "P-6000 Men’s Sneaker Shoes - Khaki", price: "₱4,995.00", gender: "men" },
+        { img: "n14.png", title: "Air Max Plus Utility Men’s Sneaker Shoes - Khaki", price: "₱10,295.00", gender: "men" },
+        { img: "n15.png", title: "Air Max Plus Men’s Sneaker Shoes - Khaki", price: "₱9,895.00", gender: "men" },
+        { img: "n16.png", title: "Nike Air Max Plus Sneaker Shoes - Yellow/Black", price: "₱6,295.00", gender: "women" },
+        { img: "n17.png", title: "Dunk Low University Blue Women’s - Blue", price: "₱7,495.00", gender: "women" },
+        { img: "n18.png", title: "Nike P-6000 Women’s Sneakers - Orange", price: "₱6,195.00", gender: "women" },
+        { img: "n19.png", title: "Nike P-6000 Women’s Sneakers - Phantom", price: "₱6,195.00", gender: "women" },
+        { img: "n20.png", title: "Air Force 1 LX Women’s Sneakers - Sail", price: "₱7,595.00", gender: "women" }
+    ];
+
+    const productContainer = document.getElementById("product-container");
+    const prevBtn = document.getElementById("prevPage");
+    const nextBtn = document.getElementById("nextPage");
+    const pageNum = document.getElementById("pageNumber");
+    const menFilter = document.getElementById("men-filter");
+    const womenFilter = document.getElementById("women-filter");
+
+    let currentPage = 0;
+    const productsPerPage = [16, 4];
+
+    function renderPage(page) {
+        productContainer.innerHTML = "";
+
+        let filteredProducts = products.filter(product => {
+            if (menFilter.checked && product.gender === "men") return true;
+            if (womenFilter.checked && product.gender === "women") return true;
+            return (!menFilter.checked && !womenFilter.checked);
+        });
+
+        const start = page === 0 ? 0 : 16;
+        const end = start + productsPerPage[page];
+        const paginatedProducts = filteredProducts.slice(start, end);
+
+        paginatedProducts.forEach(product => {
+            const productElement = document.createElement("div");
+            productElement.classList.add("product");
+
+            productElement.innerHTML = `
+                <img src="${product.img}" alt="${product.title}">
+                <h3>NIKE</h3>
+                <p>${product.title}</p>
+                <p class="price">${product.price}</p>
+                <div class="product-buttons">
+                    <button class="add-btn">Add to Cart</button>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            `;
+
+            const addToCartBtn = productElement.querySelector(".add-btn");
+            const buyNowBtn = productElement.querySelector(".buy-btn");
+
+            addToCartBtn.addEventListener("click", () => {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                const existing = cart.find(item => item.title === product.title);
+
+                if (existing) {
+                    existing.quantity = (existing.quantity || 1) + 1;
+                } else {
+                    cart.push({ ...product, quantity: 1 });
+                }
+
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartCount();
+
+                showCartAlert();
+            });
+
+            buyNowBtn.addEventListener("click", () => {
+                alert(`Buying now: ${product.title}`);
+            });
+
+            productContainer.appendChild(productElement);
+        });
+
+        prevBtn.disabled = page === 0;
+        nextBtn.disabled = page === 1 || paginatedProducts.length < productsPerPage[page];
+        pageNum.textContent = `Page ${page + 1}`;
+    }
+
+    function updateFilters() {
+        currentPage = 0;
+        renderPage(currentPage);
+    }
+
+    prevBtn.addEventListener("click", function () {
+        if (currentPage > 0) {
+            currentPage--;
+            renderPage(currentPage);
+        }
+    });
+
+    nextBtn.addEventListener("click", function () {
+        if (currentPage < 1) {
+            currentPage++;
+            renderPage(currentPage);
+        }
+    });
+
+    menFilter.addEventListener("change", updateFilters);
+    womenFilter.addEventListener("change", updateFilters);
+
+    renderPage(currentPage);
+});
+
+function showPopup(message = "Product is successfully added to your cart.") {
+    const popup = document.getElementById("popup");
+    popup.textContent = message;
+    popup.classList.add("show");
+
+    setTimeout(() => {
+        popup.classList.remove("show");
+    }, 3000); // hide after 3 seconds
+}
+
+function showCartAlert() {
+    const alert = document.getElementById("cart-alert");
+    alert.style.display = "block";
+    alert.style.opacity = "1";
+  
+    setTimeout(() => {
+      alert.style.opacity = "0";
+      setTimeout(() => {
+        alert.style.display = "none";
+      }, 500);
+    }, 2000);
+  }
