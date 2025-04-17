@@ -29,7 +29,7 @@
             <div class="dropdown">
                 <button class="nav-btn dropdown-btn">Brands</button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Nike</a></li>
+                    <li><a href="nike">Nike</a></li>
                     <li><a href="#">Adidas</a></li>
                     <li><a href="#">New Balance</a></li>
                     <li><a href="#">Converse</a></li>
@@ -67,7 +67,9 @@
     </header><br>
 
     <div class="brand-logos">
-        <img src="{{ url_for('static', filename='images/lgN.png') }}" alt="Nike">
+        <a href="/nike">
+            <img src="{{ url_for('static', filename='images/lgN.png') }}" alt="Nike">
+        </a>
         <img src="{{ url_for('static', filename='images/lgA.png') }}" alt="Adidas">
         <img src="{{ url_for('static', filename='images/lgB.png') }}" alt="New Balance">
         <img src="{{ url_for('static', filename='images/lgC.png') }}" alt="Converse">

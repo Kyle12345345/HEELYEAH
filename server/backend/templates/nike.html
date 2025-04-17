@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#808080">
     <title>heelYeah!</title>
-    <link rel="icon" href="icon.jpg" type="image/x-icon"> 
-    <link rel="stylesheet" type="text/css" href="nike.css" />
+    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="logo">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/nike.css') }}">
     <body style = "background-color: #CDCCCC;">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
@@ -19,8 +19,8 @@
 
     <nav class="header">
         <div class="logo">
-            <a href="homepage.html">
-                <img src="logo.jpg" width="170" height="50" alt="logo">
+            <a href="homepage">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" width="170" height="50" alt="logo">
             </a>
         </div>
 
@@ -37,7 +37,7 @@
             <div class="dropdown">
                 <button class="nav-btn dropdown-btn">Brands</button>
                 <ul class="dropdown-menu">
-                    <li><a href="nike.html">Nike</a></li>
+                    <li><a href="nike">Nike</a></li>
                     <li><a href="#">Adidas</a></li>
                     <li><a href="#">New Balance</a></li>
                     <li><a href="#">Converse</a></li>
@@ -47,21 +47,18 @@
         </div>
 
         <div class="nav-icons">
-            <a href="login.html"><i class="fas fa-user"></i></a>
+            <a href="login"><i class="fas fa-user"></i></a>
             <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
         </div>
-
-       
-
 
     </nav><br>
 
     <section class="gender-section">
         <div class="nike-logo">
-            <img src="lgN.png" alt="Nike Logo">
+            <img src="{{ url_for('static', filename='images/lgN.png') }}" alt="Nike Logo">
         </div>
         <div class="center-image">
-            <a href="nike.html"><img src="nike ci.png" alt="Center Image"></a>
+            <img src="{{ url_for('static', filename='nike_images/nike ci.png') }}" alt="Center Image">
         </div>
         <div class="gender-container">
             <div class="gender-filter">GENDER</div>
@@ -114,7 +111,7 @@
         </div>
     </footer>
 
-    <script src="nike.js"></script>
+    <script src="{{ url_for('static', filename='js/nike.js') }}"></script>
     
     
 </body>
