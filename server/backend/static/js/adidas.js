@@ -71,26 +71,26 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartCount();
 
     const products = [
-        { img: "adidas_images/A1.png", title: "Adidas Campus 00s Men’s Sneakers- Core Black", price: "₱5,500", gender: "men" },
-        { img: "adidas_images/A2.png", title: "Adidas Tokyo Women’s Sneakers Shoes - Off White", price: "₱6,500.00", gender: "women" },
-        { img: "adidas_images/A3.png", title: "Adidas Gazelle Indoor Women’s Sneakers Shoes - Pink", price: "₱7,300.00", gender: "women" },
-        { img: "adidas_images/A4.png", title: "Adidas Samba OG Sneakers Women’s Shoes - Ftwr White ", price: "₱6,800.00", gender: "women" },
-        { img: "adidas_images/A5.png", title: "Adidas Superstar Men’s Sneaker - White", price: "₱5,300.00", gender: "men" },
-        { img: "adidas_images/A6.png", title: "Adidas Tokyo Women’s Sneaker Shoes - Black", price: "₱6,500.00", gender: "women" },
-        { img: "adidas_images/A7.png", title: "Adidas Gazelle Women’s Indoor Shoes - Better Scarlet", price: "₱7,300", gender: "women" },
-        { img: "adidas_images/A8.png", title: "Adidas Gazelle Men’s Sneakers - Blue", price: "₱5,500", gender: "men" },
-        { img: "adidas_images/A9.png", title: "Adidas Handball Spezials Women’s Sneakers - Wonder Silver", price: "₱5,300.00", gender: "women" },
-        { img: "adidas_images/A10.png", title: "Adidas Samba LT Women’s Sneakers - Ftwr White", price: "₱7,300.00", gender: "women" },
-        { img: "adidas_images/A11.png", title: "Adidas SL 72 OG Women’s Sneakers - Off White ", price: "₱6,000 .00", gender: "women" },
-        { img: "adidas_images/A12.png", title: "Adidas Taewondo Lace Men’ Sneakers - Black", price: "₱6,500.00", gender: "men" },
-        { img: "adidas_images/A13.png", title: "Adidas Superstar Men’s Sneaker - White - Core Black", price: "₱5,300.00", gender: "men" },
-        { img: "adidas_images/A14.png", title: "Adidas SL 72 OG Women’s Sneakers - Black", price: "₱6,000.00", gender: "women" },
-        { img: "adidas_images/A15.png", title: "Adidas Samba OG Sneakers Women’s Shoes - Black", price: "₱6,800.00", gender: "women" },
-        { img: "adidas_images/A16.png", title: "Adidas Handball Spezial Men’s Sneakers Shoes - Preloved Yellow", price: "₱5,800.00", gender: "men" },
-        { img: "adidas_images/A17.png", title: "Adidas SL 72 RTN Men’s Sneakers - Crystal White", price: "₱7,300.00", gender: "men" },
-        { img: "adidas_images/A18.png", title: "Adidas Forum 2000 Men’s Sneakers Shoes - Off White", price: "₱6,800.00", gender: "men" },
-        { img: "adidas_images/A19.png", title: "Adidas Taekwondo Lace Men’s Sneakers - White", price: "₱6,500.00", gender: "men" },
-        { img: "adidas_images/A20.png", title: "Adidas Responce CL Men’s Running Shoes - Gray", price: "₱7,000.00", gender: "men" }
+        { img: "static/adidas_images/A1.png", title: "Adidas Campus 00s Men’s Sneakers- Core Black", price: "₱5,500", gender: "men" },
+        { img: "static/adidas_images/A2.png", title: "Adidas Tokyo Women’s Sneakers Shoes - Off White", price: "₱6,500.00", gender: "women" },
+        { img: "static/adidas_images/A3.png", title: "Adidas Gazelle Indoor Women’s Sneakers Shoes - Pink", price: "₱7,300.00", gender: "women" },
+        { img: "static/adidas_images/A4.png", title: "Adidas Samba OG Sneakers Women’s Shoes - Ftwr White ", price: "₱6,800.00", gender: "women" },
+        { img: "static/adidas_images/A5.png", title: "Adidas Superstar Men’s Sneaker - White", price: "₱5,300.00", gender: "men" },
+        { img: "static/adidas_images/A6.png", title: "Adidas Tokyo Women’s Sneaker Shoes - Black", price: "₱6,500.00", gender: "women" },
+        { img: "static/adidas_images/A7.png", title: "Adidas Gazelle Women’s Indoor Shoes - Better Scarlet", price: "₱7,300", gender: "women" },
+        { img: "static/adidas_images/A8.png", title: "Adidas Gazelle Men’s Sneakers - Blue", price: "₱5,500", gender: "men" },
+        { img: "static/adidas_images/A9.png", title: "Adidas Handball Spezials Women’s Sneakers - Wonder Silver", price: "₱5,300.00", gender: "women" },
+        { img: "static/adidas_images/A10.png", title: "Adidas Samba LT Women’s Sneakers - Ftwr White", price: "₱7,300.00", gender: "women" },
+        { img: "static/adidas_images/A11.png", title: "Adidas SL 72 OG Women’s Sneakers - Off White ", price: "₱6,000 .00", gender: "women" },
+        { img: "static/adidas_images/A12.png", title: "Adidas Taewondo Lace Men’ Sneakers - Black", price: "₱6,500.00", gender: "men" },
+        { img: "static/adidas_images/A13.png", title: "Adidas Superstar Men’s Sneaker - White - Core Black", price: "₱5,300.00", gender: "men" },
+        { img: "static/adidas_images/A14.png", title: "Adidas SL 72 OG Women’s Sneakers - Black", price: "₱6,000.00", gender: "women" },
+        { img: "static/adidas_images/A15.png", title: "Adidas Samba OG Sneakers Women’s Shoes - Black", price: "₱6,800.00", gender: "women" },
+        { img: "static/adidas_images/A16.png", title: "Adidas Handball Spezial Men’s Sneakers Shoes - Preloved Yellow", price: "₱5,800.00", gender: "men" },
+        { img: "static/adidas_images/A17.png", title: "Adidas SL 72 RTN Men’s Sneakers - Crystal White", price: "₱7,300.00", gender: "men" },
+        { img: "static/adidas_images/A18.png", title: "Adidas Forum 2000 Men’s Sneakers Shoes - Off White", price: "₱6,800.00", gender: "men" },
+        { img: "static/adidas_images/A19.png", title: "Adidas Taekwondo Lace Men’s Sneakers - White", price: "₱6,500.00", gender: "men" },
+        { img: "static/adidas_images/A20.png", title: "Adidas Responce CL Men’s Running Shoes - Gray", price: "₱7,000.00", gender: "men" }
     ];
 
     const productContainer = document.getElementById("product-container");

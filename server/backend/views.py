@@ -9,3 +9,7 @@ def homepage():
 @views.route('/nike')
 def nike():
     return render_template("nike.html")
+
+@views.route('/adidas')
+def adidas():
+    return render_template("adidas.html")
