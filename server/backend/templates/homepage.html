@@ -31,9 +31,9 @@
                 <ul class="dropdown-menu">
                     <li><a href="nike">Nike</a></li>
                     <li><a href="adidas">Adidas</a></li>
-                    <li><a href="#">New Balance</a></li>
-                    <li><a href="#">Converse</a></li>
-                    <li><a href="#">Puma</a></li>
+                    <li><a href="newbalance">New Balance</a></li>
+                    <li><a href="converse">Converse</a></li>
+                    <li><a href="puma">Puma</a></li>
                 </ul>
             </div>
         </div>
@@ -73,7 +73,9 @@
         <a href="/adidas">
             <img src="{{ url_for('static', filename='images/lgA.png') }}" alt="Adidas">
         </a>
-        <img src="{{ url_for('static', filename='images/lgB.png') }}" alt="New Balance">
+        <a href="/newbalance">
+            <img src="{{ url_for('static', filename='images/lgB.png') }}" alt="Adidas">
+        </a>
         <img src="{{ url_for('static', filename='images/lgC.png') }}" alt="Converse">
         <img src="{{ url_for('static', filename='images/lg.png') }}" alt="Puma">
     </div><br>

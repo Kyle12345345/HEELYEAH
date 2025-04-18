@@ -71,26 +71,26 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartCount();
 
     const products = [
-        { img: "newbalance_images/nb1.png", title: "New Balance 530 Men’s Running Shoes - White Natural Indigo", price: "₱6,295", gender: "men" },
-        { img: "newbalance_images/nb2.png", title: "New Balance 327 Men’s Sneaker Shoes - Navy", price: "₱6,995.00", gender: "men" },
-        { img: "newbalance_images/nb3.png", title: "New Balance 327 Men’s Sneaker Shoes - Silver Birch with Black", price: "₱6,995.00", gender: "men" },
-        { img: "newbalance_images/nb4.png", title: "New Balance 530 Men’s Running Shoes - Moonbeam with Sea Salt", price: "₱6,295.00", gender: "men" },
-        { img: "newbalance_images/nb5.png", title: "New Balance 2002r Men’s Sneaker Shoes - Light Grey", price: "₱9,995.00", gender: "men" },
-        { img: "newbalance_images/nb6.png", title: "New Balance 2002r Men’s Sneaker Shoes - Calm Toupe with Angora", price: "₱9,995.00", gender: "men" },
-        { img: "newbalance_images/nb7.png", title: "New Balance 550 Men’s Sneaker Shoes - Black ", price: "₱8,485.00", gender: "men" },
-        { img: "newbalance_images/nb8.png", title: "New Balance 550 Men’s Sneaker Shoes - Sea Salt Burgundy", price: "₱8,485.00", gender: "men" },
-        { img: "newbalance_images/nb9.png", title: "New Balance 1906r Men’s Sneaker Shoes - White Metallic Gold", price: "₱9,795.00", gender: "men" },
-        { img: "newbalance_images/nb10.png", title: "New Balance 1906r Men’s Sneaker Shoes - Silver", price: "₱9,795.00", gender: "men" },
-        { img: "newbalance_images/nb11.png", title: "New Balance 530 Women’s Running Shoes - Silver Metallic with Summer Fog", price: "₱6,295 .00", gender: "women" },
-        { img: "newbalance_images/nb12.png", title: "New Balance 1000 Women’s Sneaker Shoes - Purple/White", price: "₱9,795.00", gender: "women" },
-        { img: "newbalance_images/nb13.png", title: "New Balance 327 Women’s Sneaker Shoes - Black/White", price: "₱6,995.00", gender: "women" },
-        { img: "newbalance_images/nb14.png", title: "New Balance 327 Bungee Girl Sneaker Shoes - Pink", price: "₱6,995.00", gender: "women" },
-        { img: "newbalance_images/nb15.png", title: "New Balance 550 Women’s Sneaker Shoes - White/Green ", price: "₱7,795.00", gender: "women" },
-        { img: "newbalance_images/nb16.png", title: "New Balance 1906r Women’s Sneaker Shoes - Metallic Pink", price: "₱9,995.00", gender: "women" },
-        { img: "newbalance_images/nb17.png", title: "New Balance 550 Women’s Sneaker Shoes - UNC Blue", price: "₱7,795.00", gender: "women" },
-        { img: "newbalance_images/nb18.png", title: "New Balance 2002r Hook and Loop Women’s Sneaker Shoes", price: "₱9,995.00", gender: "women" },
-        { img: "newbalance_images/nb19.png", title: "New Balance 9060 Women’s Sneaker Shoes - White/Green", price: "₱10,495.00", gender: "women" },
-        { img: "newbalance_images/nb20.png", title: "New Balance 1906r Women’s Sneaker Shoes - Khaki", price: "₱9,795.00", gender: "women" }
+        { img: "static/newbalance_images/nb1.png", title: "New Balance 530 Men’s Running Shoes - White Natural Indigo", price: "₱6,295", gender: "men" },
+        { img: "static/newbalance_images/nb2.png", title: "New Balance 327 Men’s Sneaker Shoes - Navy", price: "₱6,995.00", gender: "men" },
+        { img: "static/newbalance_images/nb3.png", title: "New Balance 327 Men’s Sneaker Shoes - Silver Birch with Black", price: "₱6,995.00", gender: "men" },
+        { img: "static/newbalance_images/nb4.png", title: "New Balance 530 Men’s Running Shoes - Moonbeam with Sea Salt", price: "₱6,295.00", gender: "men" },
+        { img: "static/newbalance_images/nb5.png", title: "New Balance 2002r Men’s Sneaker Shoes - Light Grey", price: "₱9,995.00", gender: "men" },
+        { img: "static/newbalance_images/nb6.png", title: "New Balance 2002r Men’s Sneaker Shoes - Calm Toupe with Angora", price: "₱9,995.00", gender: "men" },
+        { img: "static/newbalance_images/nb7.png", title: "New Balance 550 Men’s Sneaker Shoes - Black ", price: "₱8,485.00", gender: "men" },
+        { img: "static/newbalance_images/nb8.png", title: "New Balance 550 Men’s Sneaker Shoes - Sea Salt Burgundy", price: "₱8,485.00", gender: "men" },
+        { img: "static/newbalance_images/nb9.png", title: "New Balance 1906r Men’s Sneaker Shoes - White Metallic Gold", price: "₱9,795.00", gender: "men" },
+        { img: "static/newbalance_images/nb10.png", title: "New Balance 1906r Men’s Sneaker Shoes - Silver", price: "₱9,795.00", gender: "men" },
+        { img: "static/newbalance_images/nb11.png", title: "New Balance 530 Women’s Running Shoes - Silver Metallic with Summer Fog", price: "₱6,295 .00", gender: "women" },
+        { img: "static/newbalance_images/nb12.png", title: "New Balance 1000 Women’s Sneaker Shoes - Purple/White", price: "₱9,795.00", gender: "women" },
+        { img: "static/newbalance_images/nb13.png", title: "New Balance 327 Women’s Sneaker Shoes - Black/White", price: "₱6,995.00", gender: "women" },
+        { img: "static/newbalance_images/nb14.png", title: "New Balance 327 Bungee Girl Sneaker Shoes - Pink", price: "₱6,995.00", gender: "women" },
+        { img: "static/newbalance_images/nb15.png", title: "New Balance 550 Women’s Sneaker Shoes - White/Green ", price: "₱7,795.00", gender: "women" },
+        { img: "static/newbalance_images/nb16.png", title: "New Balance 1906r Women’s Sneaker Shoes - Metallic Pink", price: "₱9,995.00", gender: "women" },
+        { img: "static/newbalance_images/nb17.png", title: "New Balance 550 Women’s Sneaker Shoes - UNC Blue", price: "₱7,795.00", gender: "women" },
+        { img: "static/newbalance_images/nb18.png", title: "New Balance 2002r Hook and Loop Women’s Sneaker Shoes", price: "₱9,995.00", gender: "women" },
+        { img: "static/newbalance_images/nb19.png", title: "New Balance 9060 Women’s Sneaker Shoes - White/Green", price: "₱10,495.00", gender: "women" },
+        { img: "static/newbalance_images/nb20.png", title: "New Balance 1906r Women’s Sneaker Shoes - Khaki", price: "₱9,795.00", gender: "women" }
     ];
 
     const productContainer = document.getElementById("product-container");

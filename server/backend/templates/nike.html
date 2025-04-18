@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#808080">
     <title>heelYeah!</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.jpg') }}" type="image/x-icon">
     <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="logo">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/nike.css') }}">
     <body style = "background-color: #CDCCCC;">
@@ -19,7 +20,7 @@
 
     <nav class="header">
         <div class="logo">
-            <a href="homepage">
+            <a href="{{ url_for('views.homepage') }}">
                 <img src="{{ url_for('static', filename='images/logo.jpg') }}" width="170" height="50" alt="logo">
             </a>
         </div>
@@ -39,9 +40,9 @@
                 <ul class="dropdown-menu">
                     <li><a href="nike">Nike</a></li>
                     <li><a href="adidas">Adidas</a></li>
-                    <li><a href="#">New Balance</a></li>
-                    <li><a href="#">Converse</a></li>
-                    <li><a href="#">Puma</a></li>
+                    <li><a href="newbalance">New Balance</a></li>
+                    <li><a href="converse">Converse</a></li>
+                    <li><a href="puma">Puma</a></li>
                 </ul>
             </div>
         </div>
