@@ -25,3 +25,7 @@ def puma():
 @views.route('/converse')
 def converse():
     return render_template("converse.html")
+
+@views.route('/cart')
+def cart():
+    return render_template('cart.html')
