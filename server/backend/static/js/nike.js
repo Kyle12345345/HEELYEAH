@@ -71,27 +71,148 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartCount();
 
     const products = [
-        { img: "static/nike_images/n1.png", title: "Nike Dunk Low Retro Men’s Basketball Shoes - White", price: "₱5,495", gender: "men" },
-        { img: "static/nike_images/n2.png", title: "Nike Cortez Women’s Sneakers - Black", price: "₱4,995.00", gender: "women" },
-        { img: "static/nike_images/n3.png", title: "Nike Zoom Vomero 5 Men’s Sneakers - Wolf Gray", price: "₱8,895.00", gender: "men" },
-        { img: "static/nike_images/n4.png", title: "Nike Air Jordan 1 Low Men’s - Bred Toe", price: "₱6,195.00", gender: "men" },
-        { img: "static/nike_images/n5.png", title: "Nike Air Force 1 '07 Women’s - White", price: "₱5,495.00", gender: "women" },
-        { img: "static/nike_images/n6.png", title: "Nike Book 1 EP Men’s Basketball Shoes - Barely Grape", price: "₱7,895.00", gender: "men" },
-        { img: "static/nike_images/n7.png", title: "Nike Air Jordan 4 Retro Men’s Basketball Shoes - Black", price: "₱11,395.00", gender: "men" },
-        { img: "static/nike_images/n8.png", title: "Nike Air Jordan 11 Retro Men’s Basketball Shoes - White", price: "₱11,895.00", gender: "men" },
-        { img: "static/nike_images/n9.png", title: "Nike Air Jordan 11 Retro Low Men’s Basketball Shoes - White/Navy", price: "₱10,295.00", gender: "men" },
-        { img: "static/nike_images/n10.png", title: "Nike Zoom Vomero 5 Women’s Sneaker Shoes - Vast Gray", price: "₱9,395.00", gender: "women" },
-        { img: "static/nike_images/n11.png", title: "Nike Dunk Low Sail Women’s - Brown ", price: "₱5,495.00", gender: "women" },
-        { img: "static/nike_images/n12.png", title: "Nike Air Jordan 11 Retro Women’s Basketball Shoes - Black", price: "₱12,295.00", gender: "women" },
-        { img: "static/nike_images/n13.png", title: "Nike P-6000 Men’s Sneaker Shoes - Khaki", price: "₱4,995.00", gender: "men" },
-        { img: "static/nike_images/n14.png", title: "Nike Air Max Plus Utility Men’s Sneaker Shoes - Khaki", price: "₱10,295.00", gender: "men" },
-        { img: "static/nike_images/n15.png", title: "Nike Air Max Plus Men’s Sneaker Shoes - Khaki", price: "₱9,895.00", gender: "men" },
-        { img: "static/nike_images/n16.png", title: "Nike Air Max Plus Sneaker Shoes - Yellow/Black", price: "₱6,295.00", gender: "women" },
-        { img: "static/nike_images/n17.png", title: "Nike Dunk Low University Blue Women’s - Blue", price: "₱7,495.00", gender: "women" },
-        { img: "static/nike_images/n18.png", title: "Nike P-6000 Women’s Sneakers - Orange", price: "₱6,195.00", gender: "women" },
-        { img: "static/nike_images/n19.png", title: "Nike P-6000 Women’s Sneakers - Phantom", price: "₱6,195.00", gender: "women" },
-        { img: "static/nike_images/n20.png", title: "Nike Air Force 1 LX Women’s Sneakers - Sail", price: "₱7,595.00", gender: "women" }
+        {
+            img: "static/nike_images/n1.png",
+            title: "Nike Dunk Low Retro Men’s Basketball Shoes – White",
+            price: "₱5,495",
+            gender: "men",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n2.png",
+            title: "Nike Cortez Women’s Sneakers – Black",
+            price: "₱4,995.00",
+            gender: "women",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n3.png",
+            title: "Nike Zoom Vomero 5 Men’s Sneakers – Wolf Gray",
+            price: "₱8,895.00",
+            gender: "men",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n4.png",
+            title: "Nike Air Jordan 1 Low Men’s – Bred Toe",
+            price: "₱6,195.00",
+            gender: "men",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n5.png",
+            title: "Nike Air Force 1 '07 Women’s – White",
+            price: "₱5,495.00",
+            gender: "women",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n6.png",
+            title: "Nike Book 1 EP Men’s Basketball Shoes – Barely Grape",
+            price: "₱7,895.00",
+            gender: "men",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n7.png",
+            title: "Nike Air Jordan 4 Retro Men’s Basketball Shoes – Black",
+            price: "₱11,395.00",
+            gender: "men",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n8.png",
+            title: "Nike Air Jordan 11 Retro Men’s Basketball Shoes – White",
+            price: "₱11,895.00",
+            gender: "men",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n9.png",
+            title: "Nike Air Jordan 11 Retro Low Men’s Basketball Shoes – White/Navy",
+            price: "₱10,295.00",
+            gender: "men",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n10.png",
+            title: "Nike Zoom Vomero 5 Women’s Sneaker Shoes – Vast Gray",
+            price: "₱9,395.00",
+            gender: "women",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n11.png",
+            title: "Nike Dunk Low Sail Women’s – Brown",
+            price: "₱5,495.00",
+            gender: "women",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n12.png",
+            title: "Nike Air Jordan 11 Retro Women’s Basketball Shoes – Black",
+            price: "₱12,295.00",
+            gender: "women",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n13.png",
+            title: "Nike P-6000 Men’s Sneaker Shoes – Khaki",
+            price: "₱4,995.00",
+            gender: "men",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n14.png",
+            title: "Nike Air Max Plus Utility Men’s Sneaker Shoes – Khaki",
+            price: "₱10,295.00",
+            gender: "men",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n15.png",
+            title: "Nike Air Max Plus Men’s Sneaker Shoes – Khaki",
+            price: "₱9,895.00",
+            gender: "men",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n16.png",
+            title: "Nike Air Max Plus Sneaker Shoes – Yellow/Black",
+            price: "₱6,295.00",
+            gender: "women",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n17.png",
+            title: "Nike Dunk Low University Blue Women’s – Blue",
+            price: "₱7,495.00",
+            gender: "women",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n18.png",
+            title: "Nike P-6000 Women’s Sneakers – Orange",
+            price: "₱6,195.00",
+            gender: "women",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n19.png",
+            title: "Nike P-6000 Women’s Sneakers – Phantom",
+            price: "₱6,195.00",
+            gender: "women",
+            brand: "Nike"
+        },
+        {
+            img: "static/nike_images/n20.png",
+            title: "Nike Air Force 1 LX Women’s Sneakers – Sail",
+            price: "₱7,595.00",
+            gender: "women",
+            brand: "Nike"
+        }
     ];
+    
 
     const productContainer = document.getElementById("product-container");
     const prevBtn = document.getElementById("prevPage");
@@ -130,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const selectedSize = sizeSelect.value;
 
                 if (!selectedSize) {
-                    alert("Please select a size before adding to cart.");
+                    
                     return;
                 }
 
