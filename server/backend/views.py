@@ -14,6 +14,10 @@ def nike():
 def adidas():
     return render_template("adidas.html")
 
-@views.route('newbalance')
+@views.route('/newbalance')
 def newbalance():
     return render_template("newbalance.html")
+
+@views.route('/puma')
+def puma():
+    return render_template("puma.html")

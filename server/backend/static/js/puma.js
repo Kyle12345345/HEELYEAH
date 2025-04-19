@@ -71,26 +71,146 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartCount();
 
     const products = [
-        { img: "static/puma_images/p1.png", title: "Puma Speedcat OG Men’s Lifestyle Shoes - Brown", price: "₱7,100", gender: "men" },
-        { img: "static/puma_images/p2.png", title: "Puma Speedcat OG Men’s Lifestyle Shoes - Black", price: "₱7,100.00", gender: "men" },
-        { img: "static/puma_images/p3.png", title: "Puma Speedcat OG Men’s Lifestyle Shoes - Blue", price: "₱7,100.00", gender: "men" },
-        { img: "static/puma_images/p4.png", title: "Puma Speedcat OG Women’s Sneakers Shoes - Whisp of Pink", price: "₱7,100.00", gender: "women" },
-        { img: "static/puma_images/p5.png", title: "Puma Speedcat OG Women’s Sneakers Shoes - Cool Mid Gray", price: "₱7,100.00", gender: "women" },
-        { img: "static/puma_images/p6.png", title: "Puma Speedcat OG Women’s Sneakers Shoes - Blue-Pink", price: "₱7,100.00", gender: "women" },
-        { img: "static/puma_images/p7.png", title: "Puma Palermo Premium Men’s Sneaker Shoes - Alpine Snow", price: "₱6,100.00", gender: "men" },
-        { img: "static/puma_images/p8.png", title: "Puma Palermo Premium Men’s Sneaker Shoes - Black", price: "₱6,100", gender: "men" },
-        { img: "static/puma_images/p9.png", title: "Puma Palermo Jer-She Women’s Lifestyle Shoes - White", price: "₱6,100.00", gender: "women" },
-        { img: "static/puma_images/p10.png", title: "Puma Palermo Women’s Lifestyle Shoes - Blue", price: "₱6,100.00", gender: "women" },
-        { img: "static/puma_images/p11.png", title: "Puma Easy Rider Mix Men’s Sneaker Shoes - White", price: "₱7,100.00", gender: "men" },
-        { img: "static/puma_images/p12.png", title: "Puma Easy Rider Vintage Men’s Lifestyle Shoes - Green", price: "₱7,100.00", gender: "men" },
-        { img: "static/puma_images/p13.png", title: "Puma Easy Rider Vintage Men’s Lifestyle Shoes - Intense Red-White", price: "₱7,100.00", gender: "men" },
-        { img: "static/puma_images/p14.png", title: "Puma Easy Rider Vintage Women’s Lifestyle Shoes - Black-White", price: "₱7,100.00", gender: "women" },
-        { img: "static/puma_images/p15.png", title: "Puma Easy Rider Vintage Women’s Lifestyle Shoes - Speed Yellow-Blue", price: "₱7,100.00", gender: "women" },
-        { img: "static/puma_images/p16.png", title: "Puma Easy Rider Jer-She Women’s Lifestyle Shoes", price: "₱6,200.00", gender: "women" },
-        { img: "static/puma_images/p17.png", title: "Puma Suede X Hello Kitty Women’s Sneaker Shoes - Black", price: "₱6,200.00", gender: "women" },
-        { img: "static/puma_images/p18.png", title: "Puma FX Suede Play Paris Women’s Sneaker Shoes - Warm White", price: "₱6,800.00", gender: "women" },
-        { img: "static/puma_images/p19.png", title: "Puma LA France 1of1 Team Men’s Basketball Shoes - Blue", price: "₱6,800.00", gender: "men" },
-        { img: "static/puma_images/p20.png", title: "Puma All-Pro Nitro Men’s Basketball Shoes - Glow - Sun Stream", price: "₱7,900.00", gender: "men" }
+        { 
+            img: "static/puma_images/p1.png", 
+            title: "Puma Speedcat OG Men’s Lifestyle Shoes - Brown", 
+            price: "₱7,100", 
+            gender: "men",
+            brand: "Puma"
+        },
+        { 
+            img: "static/puma_images/p2.png", 
+            title: "Puma Speedcat OG Men’s Lifestyle Shoes - Black", 
+            price: "₱7,100.00", 
+            gender: "men",
+            brand: "Puma"
+        },
+        { 
+            img: "static/puma_images/p3.png", 
+            title: "Puma Speedcat OG Men’s Lifestyle Shoes - Blue", 
+            price: "₱7,100.00", 
+            gender: "men",
+            brand: "Puma"
+        },
+        { 
+            img: "static/puma_images/p4.png", 
+            title: "Puma Speedcat OG Women’s Sneakers Shoes - Whisp of Pink", 
+            price: "₱7,100.00", 
+            gender: "women",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p5.png", 
+            title: "Puma Speedcat OG Women’s Sneakers Shoes - Cool Mid Gray", 
+            price: "₱7,100.00", 
+            gender: "women",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p6.png", 
+            title: "Puma Speedcat OG Women’s Sneakers Shoes - Blue-Pink", 
+            price: "₱7,100.00", 
+            gender: "women",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p7.png", 
+            title: "Puma Palermo Premium Men’s Sneaker Shoes - Alpine Snow", 
+            price: "₱6,100.00", 
+            gender: "men",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p8.png", 
+            title: "Puma Palermo Premium Men’s Sneaker Shoes - Black", 
+            price: "₱6,100", 
+            gender: "men",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p9.png", 
+            title: "Puma Palermo Jer-She Women’s Lifestyle Shoes - White", 
+            price: "₱6,100.00", 
+            gender: "women",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p10.png", 
+            title: "Puma Palermo Women’s Lifestyle Shoes - Blue", 
+            price: "₱6,100.00", 
+            gender: "women",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p11.png", 
+            title: "Puma Easy Rider Mix Men’s Sneaker Shoes - White", 
+            price: "₱7,100.00", 
+            gender: "men",
+            brand: "Puma"
+        },
+        { 
+            img: "static/puma_images/p12.png", 
+            title: "Puma Easy Rider Vintage Men’s Lifestyle Shoes - Green", 
+            price: "₱7,100.00", 
+            gender: "men",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p13.png", 
+            title: "Puma Easy Rider Vintage Men’s Lifestyle Shoes - Intense Red-White", 
+            price: "₱7,100.00", 
+            gender: "men",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p14.png", 
+            title: "Puma Easy Rider Vintage Women’s Lifestyle Shoes - Black-White", 
+            price: "₱7,100.00", 
+            gender: "women",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p15.png", 
+            title: "Puma Easy Rider Vintage Women’s Lifestyle Shoes - Speed Yellow-Blue", 
+            price: "₱7,100.00", 
+            gender: "women",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p16.png", 
+            title: "Puma Easy Rider Jer-She Women’s Lifestyle Shoes", 
+            price: "₱6,200.00", 
+            gender: "women",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p17.png", 
+            title: "Puma Suede X Hello Kitty Women’s Sneaker Shoes - Black", 
+            price: "₱6,200.00", 
+            gender: "women",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p18.png", 
+            title: "Puma FX Suede Play Paris Women’s Sneaker Shoes - Warm White", 
+            price: "₱6,800.00", 
+            gender: "women",
+            brand: "Puma"
+        },
+        { 
+            img: "static/puma_images/p19.png", 
+            title: "Puma LA France 1of1 Team Men’s Basketball Shoes - Blue", 
+            price: "₱6,800.00", 
+            gender: "men",
+            brand: "Puma" 
+        },
+        { 
+            img: "static/puma_images/p20.png", 
+            title: "Puma All-Pro Nitro Men’s Basketball Shoes - Glow - Sun Stream", 
+            price: "₱7,900.00", 
+            gender: "men",
+            brand: "Puma" 
+        }
     ];
 
     const productContainer = document.getElementById("product-container");
