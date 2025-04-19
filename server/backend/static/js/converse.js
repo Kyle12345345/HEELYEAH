@@ -72,140 +72,140 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const products = [
         {
-            img: "c1.jpg",
+            img: "static/converse_images/c1.jpg",
             title: "CONS AS-1 Pro Men's Sneakers – Classic Taupe/Truffle/Black",
             price: "₱5,990.00",
             gender: "men",
             brand: "Converse"
         },
         {
-            img: "c2.jpg",
+            img: "static/converse_images/c2.jpg",
             title: "Star Player 76 Premium Canvas Men's Sneakers – Black",
             price: "₱3,990.00",
             gender: "men",
             brand: "Converse"
         },
         {
-            img: "c3.jpg",
+            img: "static/converse_images/c3.jpg",
             title: "Run Star Trainer Retro Sport Sneakers – Obsidian/Wet Stone/Egret",
             price: "₱4,490.00",
             gender: "men",
             brand: "Converse"
         },
         {
-            img: "c4.jpg",
+            img: "static/converse_images/c4.jpg",
             title: "Chuck Taylor All Star OX Sneakers – Mono Black",
             price: "₱3,290.00",
             gender: "men",
             brand: "Converse"
         },
         {
-            img: "c5.jpg",
+            img: "static/converse_images/c5.jpg",
             title: "Run Star Hike Canvas Platform Sneakers – Black/White/Gum",
             price: "₱5,290.00",
             gender: "men",
             brand: "Converse"
         },
         {
-            img: "c6.jpg",
+            img: "static/converse_images/c6.jpg",
             title: "Chuck 70 OX Sneakers – Black",
             price: "₱4,290.00",
             gender: "men",
             brand: "Converse"
         },
         {
-            img: "c7.jpg",
+            img: "static/converse_images/c7.jpg",
             title: "Omni Trainer Sneakers – Egret/Vintage White/Black",
             price: "₱4,790.00",
             gender: "men",
             brand: "Converse"
         },
         {
-            img: "c8.jpg",
+            img: "static/converse_images/c8.jpg",
             title: "Star Player 76 Premium Canvas Men's Sneakers – Vintage White/Black",
             price: "₱3,990.00",
             gender: "men",
             brand: "Converse"
         },
         {
-            img: "c9.jpg",
+            img: "static/converse_images/c9.jpg",
             title: "Chuck 70 Hi Sneakers – Black",
             price: "₱4,990.00",
             gender: "men",
             brand: "Converse"
         },
         {
-            img: "c10.jpg",
+            img: "static/converse_images/c10.jpg",
             title: "Chuck 70 AT-CX Sneakers – Vintage White/Egret/Black",
             price: "₱2,895.00",
             gender: "men",
             brand: "Converse"
         },
         {
-            img: "c11.jpg",
+            img: "static/converse_images/c11.jpg",
             title: "CTAS Lift Women's Sneakers – Vintage White/Out of the Blue",
             price: "₱4,490.00",
             gender: "women",
             brand: "Converse"
         },
         {
-            img: "c12.jpg",
+            img: "static/converse_images/c12.jpg",
             title: "CTAS Cruise Sneakers – Egret/White/Egret",
             price: "₱4,490.00",
             gender: "women",
             brand: "Converse"
         },
         {
-            img: "c13.jpg",
+            img: "static/converse_images/c13.jpg",
             title: "Omni Trainer Sneakers – Black/Dark Matter",
             price: "₱4,790.00",
             gender: "women",
             brand: "Converse"
         },
         {
-            img: "c14.jpg",
+            img: "static/converse_images/c14.jpg",
             title: "Chuck Taylor All Star Lift Women's Sneakers – White/Black",
             price: "₱3,790.00",
             gender: "women",
             brand: "Converse"
         },
         {
-            img: "c15.jpg",
+            img: "static/converse_images/c15.jpg",
             title: "Chuck Taylor All Star Move Canvas Platform Women's Sneakers – White",
             price: "₱3,990.00",
             gender: "women",
             brand: "Converse"
         },
         {
-            img: "c16.jpg",
+            img: "static/converse_images/c16.jpg",
             title: "Run Star Trainer Women's Sneakers – Light Dune/You Dew You/Egret",
             price: "₱4,590.00",
             gender: "women",
             brand: "Converse"
         },
         {
-            img: "c17.jpg",
+            img: "static/converse_images/c17.jpg",
             title: "Run Star Trainer Suede Women's Sneakers – Pale Surplus/Blueberry Ice",
             price: "₱4,590.00",
             gender: "women",
             brand: "Converse"
         },
         {
-            img: "c18.jpg",
+            img: "static/converse_images/c18.jpg",
             title: "Run Star Hike Canvas Platform Sneakers – White/Black/Gum",
             price: "₱5,290.00",
             gender: "women",
             brand: "Converse"
         },
         {
-            img: "c19.jpg",
+            img: "static/converse_images/c19.jpg",
             title: "Run Star Trainer Suede Women's Sneakers – Coastal Dune/Sugar Berry/Egret",
             price: "₱4,590.00",
             gender: "women",
             brand: "Converse"
         },
         {
-            img: "c20.jpg",
+            img: "static/converse_images/c20.jpg",
             title: "Run Star Trainer Women's Sneakers – Vernal Pool/Egret/Light Brown",
             price: "₱4,590.00",
             gender: "women",

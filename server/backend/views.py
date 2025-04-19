@@ -21,3 +21,7 @@ def newbalance():
 @views.route('/puma')
 def puma():
     return render_template("puma.html")
+
+@views.route('/converse')
+def converse():
+    return render_template("converse.html")
