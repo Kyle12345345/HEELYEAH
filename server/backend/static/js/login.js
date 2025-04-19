@@ -3,11 +3,11 @@ const registerBtn = document.getElementById('register');
 const loginBtn = document.getElementById('login');
 
 registerBtn.addEventListener('click', () => {
-    container.classList.add("right-panel-active");
+    container.classList.add("active");
 });
 
 loginBtn.addEventListener('click', () => {
-    container.classList.remove("right-panel-active");
+    container.classList.remove("active");
 });
 
 function togglePassword(inputId, icon) {
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         } else {
             if (warning) warning.remove();
-            window.location.href = "homepage.html";
+            window.location.href = '/';
         }
     }
 
