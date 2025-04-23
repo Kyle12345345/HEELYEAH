@@ -23,9 +23,6 @@ def login():
         else:
             flash('User not found', category='error')
             
-
-      
-
     return render_template('login.html')
 
 @auth.route('/signup', methods=['GET','POST'])
@@ -38,18 +35,17 @@ def signup():
         existing_user = User.query.filter_by(email = email).first()
 
         if not existing_user:
-            new_user = User(username = name, email = email, password = password)
+            hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
+            new_user = User(username=name, email=email, password=hashed_password)
             db.session.add(new_user)
             db.session.commit()
-
             return redirect(url_for('views.homepage'))
-
         else:
-            flash('User already exist', category='success')
+            flash('User already exists', category='success')
 
         flash('Account created succesfully!', category='success')
         return redirect(url_for('auth.login'))
-    
+        
     return render_template('login.html')
 
 @auth.route('/logout')

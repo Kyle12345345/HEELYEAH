@@ -212,6 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
             brand: "New Balance" 
         }
     ];
+    
 
     const productContainer = document.getElementById("product-container");
     const prevBtn = document.getElementById("prevPage");
