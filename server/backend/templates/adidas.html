@@ -48,8 +48,15 @@
         </div>
 
         <div class="nav-icons">
-            <a href="login"><i class="fas fa-user"></i></a>
-            <a href="cart"><i class="fas fa-shopping-cart"></i></a>
+            <a href="{{ url_for('auth.profile') if session.get('logged_in') else url_for('auth.login') }}">
+                <i class="fas fa-user"></i>
+            </a>
+            <a href="{{ url_for('views.cart') }}"><i class="fas fa-shopping-cart"></i></a>
+            {% if session.get('logged_in') %}
+                <a href="{{ url_for('auth.logout') }}">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            {% endif %}
         </div>
 
     </nav><br>

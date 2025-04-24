@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>heelYeah! - Profile</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.jpg') }}" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav class="header">
+        <div class="logo">
+            <a href="{{ url_for('views.homepage') }}">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" width="170" height="50" alt="logo">
+            </a>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn">New Arrivals</button>
+            <button class="nav-btn">Men</button>
+            <button class="nav-btn">Women</button>
+
+            <div class="dropdown">
+                <button class="nav-btn dropdown-btn">Brands</button>
+                <ul class="dropdown-menu">
+                    <li><a href="/nike">Nike</a></li>
+                    <li><a href="/adidas">Adidas</a></li>
+                    <li><a href="/newbalance">New Balance</a></li>
+                    <li><a href="/converse">Converse</a></li>
+                    <li><a href="/puma">Puma</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nav-icons">
+            <a href="{{ url_for('views.cart') }}" title="Cart"><i class="fas fa-shopping-cart"></i></a>
+            {% if session.get('logged_in') %}
+                <a href="{{ url_for('auth.logout') }}" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <div class="welcome-container">
+        <h1>
+            Welcome, <span id="username">{{ username }}</span> — step into style with <span class="brand-name">heelYeah!</span>
+        </h1>
+        <p class="subtext">
+            From fresh drops to iconic classics, find the perfect pair that fits your vibe.
+        </p>
+    </div>
+    
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                    <ul>
+                        <li>About us</li>
+                        <li>Terms & Conditions</li>
+                        <li>Privacy Policy</li>
+                    </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li>FAQ</li>
+                    <li>Contact us</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+</body>
+</html>

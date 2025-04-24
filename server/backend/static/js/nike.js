@@ -33,7 +33,7 @@ function createProductCard(product) {
 
             <div class="product-buttons">
                 <button class="add-btn">Add to Cart</button>
-                <button class="buy-btn">Buy Now</button>
+                
             </div>
         </div>
     `;
@@ -244,7 +244,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const product = paginatedProducts[index];
 
             const addToCartBtn = productElement.querySelector(".add-btn");
-            const buyNowBtn = productElement.querySelector(".buy-btn");
 
             addToCartBtn.addEventListener("click", () => {
                 const sizeSelect = productElement.querySelector(".size-dropdown");
@@ -269,9 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 showCartAlert();
             });
 
-            buyNowBtn.addEventListener("click", () => {
-                alert(`Buying now: ${product.title}`);
-            });
         });
 
         prevBtn.disabled = page === 0;

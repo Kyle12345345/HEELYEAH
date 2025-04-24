@@ -22,3 +22,32 @@ function togglePassword(inputId, icon) {
     icon.classList.add("fa-eye-slash");
   }
 }
+
+loginForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email: email, password: password })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      window.location.href = '/profile';
+    } else {
+      alert(data.message || "Invalid credentials.");
+    }
+  })
+  .catch(error => {
+    console.error('Login failed:', error);
+    alert("There was an error logging in. Please try again later.");
+  });
+});
+
+

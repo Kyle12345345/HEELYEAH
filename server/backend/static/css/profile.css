@@ -97,6 +97,8 @@ ul:hover a:hover {
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dropdown-menu {
@@ -170,200 +172,9 @@ ul:hover a:hover {
     transform: scale(1.1);
 }
 
-.logout-btn {
-    color: white;
-    background-color: #333;
-    padding: 5px 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.logout-btn:hover {
-    background-color: #555;
-}
-
-
-.hero-carousel {
-    position: relative;
-    width: 95%;
-    max-height: 350px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding-top: 80px;
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-    width: 300%;
-}
-
-.slide {
-    min-width: 100%;
-    flex-shrink: 0;
-}
-
-.slide img {
-    width: 100%;
-    height: 350px;
-    display: block;
-}
-
-
-.dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 4px;
-}
-
-.dot {
-    width: 6px;
-    height: 6px;
-    background-color: gray;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.dot.active {
-    background-color: white;
-}
-
-.brand-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 90px;
-    margin-top: 10px;
-    padding: 10px 0;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-}
-
-.brand-logos img {
-    height: 150px;
-    filter: grayscale(100%);
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-    cursor: pointer;
-}
-
-.brand-logos img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.15);
-}
-
-.slider-container {
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
-    background-color: #e0e0e0;
-    padding: 30px 0;
-    position: relative;
-}
-
-.slider {
-    display: flex;
-    gap: 15px;
-    animation: slideLoop 40s linear infinite;
-    width: max-content;
-}
-
-.slider img {
-    height: 400px;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-@keyframes slideLoop {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ddd;
-    text-align: center;
-}
-
-.container {
-    padding: 20px;
-}
-
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.shop-categories {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    max-width: 650px;
-    margin: auto;
-}
-
-.category {
-    position: relative;
-    width: 300px;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out;
-}
-
-.category:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    filter: brightness(1.1);
-    cursor: pointer;
-}
-
-.category img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease-in-out;
-}
-
-.category:hover img {
-    transform: scale(1.05);
-}
-
-.category-title {
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px;
-    background-color: white;
-}
-
-.new-arrivals {
-    width: 300px;
-    flex-basis: 100%; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
-
 footer {
+    position: fixed;
+    bottom: 0;
     background-color: black;
     color: white;
     padding: 20px;
@@ -414,4 +225,40 @@ footer {
 
 .footer-section ul li a:hover::after {
     width: 100%;
+}
+
+.welcome-container {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 40px;
+    background-color: #efefef;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+    margin-top: 100px;
+}
+
+.welcome-message {
+    font-size: 100px;
+    font-weight: bold;
+    color: #0D0D0D;
+}
+
+.brand-name {
+    color: #E63946;
+    font-style: italic;
+}
+
+#username {
+    color: #4A4A4A;
+}
+
+.subtext {
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
 }
