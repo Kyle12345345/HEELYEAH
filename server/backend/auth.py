@@ -7,6 +7,7 @@ from.extensions import db
 auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET','POST'])
+@auth.route('/login', methods=['GET','POST'])
 def login():
     if request.method == 'POST':
         email = request.form.get('email')
@@ -23,8 +24,11 @@ def login():
         else:
             flash('User not found', category='error')
             
+            flash('User not found', category='error')
+            
     return render_template('login.html')
 
+@auth.route('/signup', methods=['GET','POST'])
 @auth.route('/signup', methods=['GET','POST'])
 def signup():
     if request.method == 'POST':
@@ -42,9 +46,20 @@ def signup():
             return redirect(url_for('views.homepage'))
         else:
             flash('User already exists', category='success')
+        existing_user = User.query.filter_by(email = email).first()
+
+        if not existing_user:
+            hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
+            new_user = User(username=name, email=email, password=hashed_password)
+            db.session.add(new_user)
+            db.session.commit()
+            return redirect(url_for('views.homepage'))
+        else:
+            flash('User already exists', category='success')
 
         flash('Account created succesfully!', category='success')
         return redirect(url_for('auth.login'))
+        
         
     return render_template('login.html')
 
