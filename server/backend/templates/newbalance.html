@@ -17,12 +17,18 @@
      
 <body>
 
+
     <nav class="header">
         <div class="logo">
             <a href="{{ url_for('views.homepage') }}">
                 <img src="{{ url_for('static', filename='images/logo.jpg') }}" width="170" height="50" alt="logo">
             </a>
         </div>
+
+        <div id="cart-alert" style="display: none;" class="alert">
+            Product is added to your cart successfully.
+          </div>
+          
 
         <div class="navigation">
             <button class="nav-btn">New Arrivals</button>
@@ -45,11 +51,12 @@
             <a href="login"><i class="fas fa-user"></i></a>
             <a href="cart"><i class="fas fa-shopping-cart"></i></a>
         </div>
+
     </nav><br>
 
     <section class="gender-section">
         <div class="nike-logo">
-            <img src="{{ url_for('static', filename='images/lgB.png') }}" alt="New Balance Logo">
+            <img src="{{ url_for('static', filename='images/lgB.png') }}" alt="Nike Logo">
         </div>
         <div class="center-image">
             <img src="{{ url_for('static', filename='newbalance_images/newbalance ci.png') }}" alt="Center Image">
