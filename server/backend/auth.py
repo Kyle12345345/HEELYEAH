@@ -6,34 +6,46 @@ from.extensions import db
 
 auth = Blueprint('auth', __name__)
 
-@auth.route('/login', methods=['GET', 'POST'])
+@auth.route('/login', methods=['GET','POST'])
 def login():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
 
-        #add authentication login 
+        existing_user = User.query.filter_by(email = email).first()
 
-        if email == 'test@example.com' and password == 'password123':
-            flash('Login successful!', category='success')
-            return redirect(url_for('views.homepage'))
+        if existing_user:
+            if check_password_hash(existing_user.password, password):
+                return redirect(url_for('views.homepage'))
+            else:
+                flash('Password incorrect', category='error')
+
         else:
-            flash('Invalid credentials, try again', category='error')
-
+            flash('User not found', category='error')
+            
     return render_template('login.html')
 
-@auth.route('/signup', methods=['GET', 'POST'])
+@auth.route('/signup', methods=['GET','POST'])
 def signup():
     if request.method == 'POST':
         name = request.form.get('name')
         email = request.form.get('email')
         password = request.form.get('password')
 
-        #add logic to save user to a database
+        existing_user = User.query.filter_by(email = email).first()
+
+        if not existing_user:
+            hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
+            new_user = User(username=name, email=email, password=hashed_password)
+            db.session.add(new_user)
+            db.session.commit()
+            return redirect(url_for('views.homepage'))
+        else:
+            flash('User already exists', category='success')
 
         flash('Account created succesfully!', category='success')
         return redirect(url_for('auth.login'))
-    
+        
     return render_template('login.html')
 
 @auth.route('/logout')

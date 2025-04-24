@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const selectedSize = sizeSelect.value;
 
                 if (!selectedSize) {
-                    
+                    alert("Please select a size before adding to cart.");
                     return;
                 }
 

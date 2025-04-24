@@ -1,18 +1,19 @@
 from flask import Flask
-from .extensions import db
+from .extensions import db, login_manager
+
 
 
 def create_website():
-
     app = Flask(__name__)
     app.config["SECRET_KEY"] = 'qweqweqwedfsdfsdvh'
     app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///pangalan.db'
-    
+        
     from .auth import auth
-    from .views import views
-
     app.register_blueprint(auth, url_prefix='/')
+
+    from .views import views
     app.register_blueprint(views, url_prefix='/')
+
 
     # from db_models import 'you tables'
 
