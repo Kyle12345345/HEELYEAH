@@ -379,18 +379,22 @@ footer {
     margin: 0 10px;
 }
 
-.trash {
-    background: none;
-    border: none;
-    font-size: 24px;
+.delete-selected {
+    color: rgb(0, 0, 0);
+    padding: 8px 12px;
     cursor: pointer;
-    margin-left: -390px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+    scale: 1.5;
+    margin-left: -400px;
 }
 
-.trash:hover {
+.delete-selected:hover {
     transform: scale(1.05);
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 
 .checkout {
     background-color: black;

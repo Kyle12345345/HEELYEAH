@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         itemElement.classList.add("cart-item");
   
         const itemId = `checkbox-${index}`;
-        const isChecked = checkboxStates[index] !== undefined ? checkboxStates[index] : true;
+        const isChecked = checkboxStates[index] !== undefined ? checkboxStates[index] : false;
   
         itemElement.innerHTML = `
           <input type="checkbox" class="item-checkbox" id="${itemId}" data-index="${index}" ${isChecked ? "checked" : ""} />
@@ -150,10 +150,30 @@ document.addEventListener("DOMContentLoaded", () => {
   
     renderCart();
   
-    window.clearCart = () => {
-      localStorage.removeItem("cart");
+    // Add Delete Selected functionality
+  const deleteSelectedBtn = document.getElementById("delete-selected");
+
+  if (deleteSelectedBtn) {
+    deleteSelectedBtn.addEventListener("click", () => {
+      let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      const itemCheckboxes = document.querySelectorAll(".item-checkbox");
+
+      // Filter out checked items (items to remove)
+      const updatedCartItems = cartItems.filter((_, index) => {
+        const checkbox = document.querySelector(`#checkbox-${index}`);
+        return checkbox && !checkbox.checked;
+      });
+
+      // Update cart in localStorage with remaining items
+      localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+
+      // Reset checkbox states
       checkboxStates = {};
       userToggledSelectAll = false;
+
+      // Re-render cart after deletion
       renderCart();
-    };
+    });
+  }
+
   });
