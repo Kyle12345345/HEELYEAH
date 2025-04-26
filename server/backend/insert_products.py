@@ -21,7 +21,6 @@ with app.app_context():
             "gender": "Women",
             "size": "6,7,8,9,10,11"
         },
-        # Add all your other 18 shoes here...
         {
             "brand": "Nike",
             "name": "Nike Air Max Plus Sneaker Shoes – Yellow/Black",
@@ -30,7 +29,6 @@ with app.app_context():
             "gender": "Women",
             "size": "6,7,8,9,10,11"
         },
-        # Continue until all 20 shoes are here
     ]
 
     for product_data in nike_products:
