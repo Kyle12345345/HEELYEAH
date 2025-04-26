@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, flash
+from .db_models import Product
 
 views = Blueprint('views', __name__)
 
@@ -8,7 +9,8 @@ def homepage():
 
 @views.route('/nike')
 def nike():
-    return render_template("nike.html")
+    nike_products = Product.query.filter_by(brand="Nike").all()
+    return render_template("nike.html", products=nike_products)
 
 @views.route('/adidas')
 def adidas():
