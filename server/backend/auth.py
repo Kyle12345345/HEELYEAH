@@ -55,7 +55,7 @@ def signup():
         else:
             flash('User already exists', category='error')
 
-    return render_template('signup.html')
+    return render_template('login.html')
 
 @auth.route('/logout')
 def logout():
@@ -68,3 +68,8 @@ def profile():
     if 'logged_in' not in session:
         return redirect(url_for('auth.login'))
     return render_template('profile.html', username=session['user_name'])
+
+@auth.route('/place_order', methods=['GET', 'POST'])
+def place_order():
+    # Process order logic (e.g., save order to database)
+    return redirect(url_for('views.homepage'))

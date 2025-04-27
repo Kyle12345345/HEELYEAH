@@ -31,3 +31,7 @@ def converse():
 @views.route('/cart')
 def cart():
     return render_template('cart.html')
+
+@views.route('/checkout')
+def checkout():
+    return render_template('checkout.html')
