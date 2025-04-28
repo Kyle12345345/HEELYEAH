@@ -87,9 +87,25 @@
     </section>
 
     <section class="product-grid" id="product-container">
-        <!-- Products will be injected here via JavaScript -->
-    </section>
-
+        {% for product in products %}
+        <div class="product-card" data-gender="{{ product.gender }}">
+            <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p class="price">₱{{ "{:,.2f}".format(product.price) }}</p>
+            <p class="gender">{{ product.gender }}</p>
+    
+            <select class="size-dropdown">
+                <option value="">Select Size</option>
+                {% for size in product.size.split(',') %}
+                <option value="{{ size }}">{{ size }}</option>
+                {% endfor %}
+            </select>
+    
+            <button class="add-btn">Add to Cart</button>
+        </div>
+        {% endfor %}
+    </section>    
+    
     <div class="pagination">
         <button id="prevPage" disabled>
             <i class="fas fa-chevron-left"></i> 
