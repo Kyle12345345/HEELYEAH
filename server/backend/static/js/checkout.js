@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         localStorage.setItem(addressKey, JSON.stringify(address));
 
-        savedAddressDiv.innerHTML = `
+        savedAddressDiv.innerHTML = `        
           <h4>Default Address:</h4>
           <p>${fullname}</p>
           <p>${street}</p>
@@ -174,6 +174,7 @@ placeOrderBtn.addEventListener('click', () => {
     const fullCart = JSON.parse(localStorage.getItem('cart')) || [];
     const checkoutCart = JSON.parse(localStorage.getItem('checkoutCart')) || [];
 
+    // Filter out the selected items from fullCart (those that are in checkoutCart)
     const updatedCart = fullCart.filter(fullItem => {
         return !checkoutCart.some(checkoutItem => (
             fullItem.id === checkoutItem.id &&
@@ -181,7 +182,10 @@ placeOrderBtn.addEventListener('click', () => {
         ));
     });
 
+    // Update the full cart in localStorage
     localStorage.setItem('cart', JSON.stringify(updatedCart));
+    
+    // Remove checkoutCart after placing the order
     localStorage.removeItem('checkoutCart');
 
     // --- Create the popup dynamically ---
@@ -201,6 +205,6 @@ placeOrderBtn.addEventListener('click', () => {
     // --- Auto close the popup after 2 seconds ---
     setTimeout(() => {
         popup.remove(); // Remove the popup from DOM
-        window.location.href = "/place_order"; // Redirect after close
+        window.location.href = "/cart"; // Redirect to cart page after close
     }, 1000); // 1000 milliseconds = 1 second
 });

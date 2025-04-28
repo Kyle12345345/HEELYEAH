@@ -141,6 +141,31 @@ ul:hover a:hover {
     box-shadow: 0 2px 0 0 currentColor;
 }
 
+.home-icon-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px; /* Space below the navigation bar */
+    margin-right: 1100px;
+}
+
+.home-icon-container a {
+    text-decoration: none;
+    color: black;
+    font-size: 10px; /* Size of the home icon */
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.home-icon-container a:hover {
+    color: #424242;
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.home-icon-container i.fas.fa-home {
+    font-size: 20px; /* Adjust icon size */
+    cursor: pointer;
+}
+
+
 .nav-icons {
     position: absolute;
     top: 10px;
@@ -170,6 +195,15 @@ ul:hover a:hover {
 .nav-icons a:hover {
     color: #424242;
     transform: scale(1.1);
+}
+
+.nav-icons a i.fas.fa-home {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav-icons a:hover i.fas.fa-home {
+    color: #000;
 }
 
 footer {

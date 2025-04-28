@@ -38,6 +38,11 @@ function createProductCard(product) {
     `;
 }
 
+// Function to check if the user is logged in
+function isUserLoggedIn() {
+    return localStorage.getItem('isLoggedIn') === 'true'; // This should match your login status check logic
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const dropdown = document.querySelector(".dropdown");
     const dropdownMenu = document.querySelector(".dropdown-menu");
@@ -211,7 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
             brand: "New Balance" 
         }
     ];
-    
 
     const productContainer = document.getElementById("product-container");
     const prevBtn = document.getElementById("prevPage");
@@ -245,6 +249,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const addToCartBtn = productElement.querySelector(".add-btn");
 
             addToCartBtn.addEventListener("click", () => {
+                // Show the login prompt popup if the user is not logged in
+                if (!isUserLoggedIn()) {
+                    showLoginPrompt(); // Custom function to show a popup
+                    return;
+                }
+
                 const sizeSelect = productElement.querySelector(".size-dropdown");
                 const selectedSize = sizeSelect.value;
 
@@ -266,7 +276,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 updateCartCount();
                 showCartAlert();
             });
-
         });
 
         prevBtn.disabled = page === 0;
@@ -299,16 +308,23 @@ document.addEventListener("DOMContentLoaded", () => {
     renderPage(currentPage);
 });
 
-function showPopup(message = "Product is successfully added to your cart.") {
-    const popup = document.getElementById("popup");
-    popup.textContent = message;
-    popup.classList.add("show");
+// Function to show the login prompt
+function showLoginPrompt() {
+    const prompt = document.createElement("div");
+    prompt.classList.add("login-prompt");
+    prompt.innerHTML = `
+        <div class="login-prompt-content">
+            <p>Please log in to add items to your cart.</p>
+        </div>
+    `;
+    document.body.appendChild(prompt);
 
     setTimeout(() => {
-        popup.classList.remove("show");
-    }, 3000);
+        prompt.remove();
+    }, 1000); // Auto-close the popup after 1 second
 }
 
+// Function to show a popup message when an item is added to the cart
 function showCartAlert() {
     const alert = document.getElementById("cart-alert");
     alert.style.display = "block";
@@ -319,5 +335,5 @@ function showCartAlert() {
         setTimeout(() => {
             alert.style.display = "none";
         }, 500);
-    }, 2000);
+    }, 1000);
 }

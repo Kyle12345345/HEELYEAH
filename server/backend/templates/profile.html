@@ -44,6 +44,13 @@
         </div>
     </nav>
 
+    <!-- Home Icon Below the Navigation Bar -->
+    <div class="home-icon-container">
+        <a href="{{ url_for('views.homepage') }}" title="Home">
+            <i class="fas fa-home"></i> <!-- Home icon -->
+        </a>
+    </div>
+
     <div class="welcome-container">
         <h1>
             Welcome, <span id="username">{{ username }}</span> — step into style with <span class="brand-name">heelYeah!</span>
