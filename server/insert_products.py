@@ -154,7 +154,7 @@ with app.app_context():
             "name": "Nike P-6000 Women’s Sneakers – Phantom",
             "price": 6195.00,
             "image": "nike_images/n19.png",
-            "gender": "men",
+            "gender": "women",
             "size": "6,7,8,9,10,11"
         },
         {
