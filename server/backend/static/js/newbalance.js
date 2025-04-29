@@ -1,4 +1,7 @@
 let currentIndex = 0;
+let currentPage = 0;
+let products = [];
+
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
 
@@ -8,7 +11,6 @@ function showSlide(index) {
     else currentIndex = index;
 
     document.querySelector('.slides').style.transform = `translateX(${-currentIndex * 100}%)`;
-
     dots.forEach(dot => dot.classList.remove('active'));
     dots[currentIndex].classList.add('active');
 }
@@ -36,11 +38,6 @@ function createProductCard(product) {
             </div>
         </div>
     `;
-}
-
-// Function to check if the user is logged in
-function isUserLoggedIn() {
-    return localStorage.getItem('isLoggedIn') === 'true'; // This should match your login status check logic
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -72,159 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    updateCartCount();
-
-    const products = [
-        { 
-            img: "static/newbalance_images/nb1.png", 
-            title: "New Balance 530 Men’s Running Shoes - White Natural Indigo", 
-            price: "₱6,295", 
-            gender: "men",
-            brand: "New Balance"
-        },
-        { 
-            img: "static/newbalance_images/nb2.png", 
-            title: "New Balance 327 Men’s Sneaker Shoes - Navy", 
-            price: "₱6,995.00", 
-            gender: "men",
-            brand: "New Balance" 
-        },
-        { 
-            img: "static/newbalance_images/nb3.png", 
-            title: "New Balance 327 Men’s Sneaker Shoes - Silver Birch with Black", 
-            price: "₱6,995.00", 
-            gender: "men",
-            brand: "New Balance"
-        },
-        { 
-            img: "static/newbalance_images/nb4.png", 
-            title: "New Balance 530 Men’s Running Shoes - Moonbeam with Sea Salt", 
-            price: "₱6,295.00", 
-            gender: "men",
-            brand: "New Balance"
-        },
-        { 
-            img: "static/newbalance_images/nb5.png", 
-            title: "New Balance 2002r Men’s Sneaker Shoes - Light Grey", 
-            price: "₱9,995.00", 
-            gender: "men",
-            brand: "New Balance" 
-        },
-        { 
-            img: "static/newbalance_images/nb6.png", 
-            title: "New Balance 2002r Men’s Sneaker Shoes - Calm Toupe with Angora", 
-            price: "₱9,995.00", 
-            gender: "men",
-            brand: "New Balance"
-        },
-        { 
-            img: "static/newbalance_images/nb7.png", 
-            title: "New Balance 550 Men’s Sneaker Shoes - Black ", 
-            price: "₱8,485.00", 
-            gender: "men",
-            brand: "New Balance" 
-        },
-        { 
-            img: "static/newbalance_images/nb8.png", 
-            title: "New Balance 550 Men’s Sneaker Shoes - Sea Salt Burgundy", 
-            price: "₱8,485.00", 
-            gender: "men",
-            brand: "New Balance" 
-        },
-        { 
-            img: "static/newbalance_images/nb9.png", 
-            title: "New Balance 1906r Men’s Sneaker Shoes - White Metallic Gold", 
-            price: "₱9,795.00", 
-            gender: "men",
-            brand: "New Balance"
-        },
-        { 
-            img: "static/newbalance_images/nb10.png", 
-            title: "New Balance 1906r Men’s Sneaker Shoes - Silver", 
-            price: "₱9,795.00", 
-            gender: "men",
-            brand: "New Balance"
-        },
-        { 
-            img: "static/newbalance_images/nb11.png", 
-            title: "New Balance 530 Women’s Running Shoes - Silver Metallic with Summer Fog", 
-            price: "₱6,295 .00", 
-            gender: "women",
-            brand: "New Balance" 
-        },
-        { 
-            img: "static/newbalance_images/nb12.png", 
-            title: "New Balance 1000 Women’s Sneaker Shoes - Purple/White", 
-            price: "₱9,795.00", 
-            gender: "women",
-            brand: "New Balance"
-        },
-        { 
-            img: "static/newbalance_images/nb13.png", 
-            title: "New Balance 327 Women’s Sneaker Shoes - Black/White", 
-            price: "₱6,995.00", 
-            gender: "women",
-            brand: "New Balance"
-        },
-        { 
-            img: "static/newbalance_images/nb14.png", 
-            title: "New Balance 327 Bungee Girl Sneaker Shoes - Pink", 
-            price: "₱6,995.00", 
-            gender: "women",
-            brand: "New Balance" 
-        },
-        { 
-            img: "static/newbalance_images/nb15.png", 
-            title: "New Balance 550 Women’s Sneaker Shoes - White/Green ", 
-            price: "₱7,795.00", 
-            gender: "women",
-            brand: "New Balance" 
-        },
-        { 
-            img: "static/newbalance_images/nb16.png", 
-            title: "New Balance 1906r Women’s Sneaker Shoes - Metallic Pink", 
-            price: "₱9,995.00", 
-            gender: "women",
-            brand: "New Balance" 
-        },
-        { 
-            img: "static/newbalance_images/nb17.png", 
-            title: "New Balance 550 Women’s Sneaker Shoes - UNC Blue", 
-            price: "₱7,795.00", 
-            gender: "women",
-            brand: "New Balance" 
-        },
-        { 
-            img: "static/newbalance_images/nb18.png", 
-            title: "New Balance 2002r Hook and Loop Women’s Sneaker Shoes", 
-            price: "₱9,995.00", 
-            gender: "women",
-            brand: "New Balance" 
-        },
-        { 
-            img: "static/newbalance_images/nb19.png", 
-            title: "New Balance 9060 Women’s Sneaker Shoes - White/Green", 
-            price: "₱10,495.00", 
-            gender: "women",
-            brand: "New Balance" 
-        },
-        { 
-            img: "static/newbalance_images/nb20.png", 
-            title: "New Balance 1906r Women’s Sneaker Shoes - Khaki", 
-            price: "₱9,795.00", 
-            gender: "women",
-            brand: "New Balance" 
-        }
-    ];
-
     const productContainer = document.getElementById("product-container");
     const prevBtn = document.getElementById("prevPage");
     const nextBtn = document.getElementById("nextPage");
     const pageNum = document.getElementById("pageNumber");
     const menFilter = document.getElementById("men-filter");
     const womenFilter = document.getElementById("women-filter");
-
-    let currentPage = 0;
     const productsPerPage = [16, 4];
 
     function renderPage(page) {
@@ -245,16 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const productElements = document.querySelectorAll(".product");
         productElements.forEach((productElement, index) => {
             const product = paginatedProducts[index];
-
             const addToCartBtn = productElement.querySelector(".add-btn");
 
             addToCartBtn.addEventListener("click", () => {
-                // Show the login prompt popup if the user is not logged in
-                if (!isUserLoggedIn()) {
-                    showLoginPrompt(); // Custom function to show a popup
-                    return;
-                }
-
                 const sizeSelect = productElement.querySelector(".size-dropdown");
                 const selectedSize = sizeSelect.value;
 
@@ -305,26 +148,37 @@ document.addEventListener("DOMContentLoaded", () => {
     menFilter.addEventListener("change", updateFilters);
     womenFilter.addEventListener("change", updateFilters);
 
-    renderPage(currentPage);
+    updateCartCount();
+
+    // ✅ Fetch data from backend
+    fetch('/products?brand=New Balance')
+        .then(response => response.json())
+        .then(data => {
+            products = data.map(product => ({
+                img: `/static/${product.image}`,
+                title: product.name,
+                price: `₱${product.price.toLocaleString()}.00`,
+                gender: product.gender.toLowerCase(),
+                brand: product.brand
+            }));
+            console.log("Fetched New Balance products:", products);
+            renderPage(currentPage);
+        })
+        .catch(error => {
+            console.error("Error fetching New Balance products:", error);
+        });
 });
 
-// Function to show the login prompt
-function showLoginPrompt() {
-    const prompt = document.createElement("div");
-    prompt.classList.add("login-prompt");
-    prompt.innerHTML = `
-        <div class="login-prompt-content">
-            <p>Please log in to add items to your cart.</p>
-        </div>
-    `;
-    document.body.appendChild(prompt);
+function showPopup(message = "Product is successfully added to your cart.") {
+    const popup = document.getElementById("popup");
+    popup.textContent = message;
+    popup.classList.add("show");
 
     setTimeout(() => {
-        prompt.remove();
-    }, 1000); // Auto-close the popup after 1 second
+        popup.classList.remove("show");
+    }, 3000);
 }
 
-// Function to show a popup message when an item is added to the cart
 function showCartAlert() {
     const alert = document.getElementById("cart-alert");
     alert.style.display = "block";
@@ -335,5 +189,5 @@ function showCartAlert() {
         setTimeout(() => {
             alert.style.display = "none";
         }, 500);
-    }, 1000);
+    }, 2000);
 }
