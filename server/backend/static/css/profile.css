@@ -141,31 +141,6 @@ ul:hover a:hover {
     box-shadow: 0 2px 0 0 currentColor;
 }
 
-.home-icon-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px; /* Space below the navigation bar */
-    margin-right: 1100px;
-}
-
-.home-icon-container a {
-    text-decoration: none;
-    color: black;
-    font-size: 10px; /* Size of the home icon */
-    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.home-icon-container a:hover {
-    color: #424242;
-    transform: scale(1.1); /* Slight scale effect on hover */
-}
-
-.home-icon-container i.fas.fa-home {
-    font-size: 20px; /* Adjust icon size */
-    cursor: pointer;
-}
-
-
 .nav-icons {
     position: absolute;
     top: 10px;
@@ -295,5 +270,24 @@ footer {
     font-size: 18px;
     color: #555;
     margin-top: 20px;
+}
+
+.cta-button {
+    background-color: #373737; /* A vibrant color for the button */
+    color: white;
+    padding: 15px 30px;
+    font-size: 15px;
+    border: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    bottom: 10px; /* Position it at the bottom of the container */
+    margin-left: 190px;
+    transform: translateX(-50%); /* Center it horizontally */
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #6c6c6c; /* Darker shade when hovered */
 }
 

@@ -1,4 +1,7 @@
 let currentIndex = 0;
+let currentPage = 0;
+let products = [];
+
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
 
@@ -8,7 +11,6 @@ function showSlide(index) {
     else currentIndex = index;
 
     document.querySelector('.slides').style.transform = `translateX(${-currentIndex * 100}%)`;
-
     dots.forEach(dot => dot.classList.remove('active'));
     dots[currentIndex].classList.add('active');
 }
@@ -67,160 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    updateCartCount();
-
-    const products = [
-        {
-            img: "static/converse_images/c1.jpg",
-            title: "CONS AS-1 Pro Men's Sneakers – Classic Taupe/Truffle/Black",
-            price: "₱5,990.00",
-            gender: "men",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c2.jpg",
-            title: "Star Player 76 Premium Canvas Men's Sneakers – Black",
-            price: "₱3,990.00",
-            gender: "men",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c3.jpg",
-            title: "Run Star Trainer Retro Sport Sneakers – Obsidian/Wet Stone/Egret",
-            price: "₱4,490.00",
-            gender: "men",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c4.jpg",
-            title: "Chuck Taylor All Star OX Sneakers – Mono Black",
-            price: "₱3,290.00",
-            gender: "men",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c5.jpg",
-            title: "Run Star Hike Canvas Platform Sneakers – Black/White/Gum",
-            price: "₱5,290.00",
-            gender: "men",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c6.jpg",
-            title: "Chuck 70 OX Sneakers – Black",
-            price: "₱4,290.00",
-            gender: "men",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c7.jpg",
-            title: "Omni Trainer Sneakers – Egret/Vintage White/Black",
-            price: "₱4,790.00",
-            gender: "men",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c8.jpg",
-            title: "Star Player 76 Premium Canvas Men's Sneakers – Vintage White/Black",
-            price: "₱3,990.00",
-            gender: "men",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c9.jpg",
-            title: "Chuck 70 Hi Sneakers – Black",
-            price: "₱4,990.00",
-            gender: "men",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c10.jpg",
-            title: "Chuck 70 AT-CX Sneakers – Vintage White/Egret/Black",
-            price: "₱2,895.00",
-            gender: "men",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c11.jpg",
-            title: "CTAS Lift Women's Sneakers – Vintage White/Out of the Blue",
-            price: "₱4,490.00",
-            gender: "women",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c12.jpg",
-            title: "CTAS Cruise Sneakers – Egret/White/Egret",
-            price: "₱4,490.00",
-            gender: "women",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c13.jpg",
-            title: "Omni Trainer Sneakers – Black/Dark Matter",
-            price: "₱4,790.00",
-            gender: "women",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c14.jpg",
-            title: "Chuck Taylor All Star Lift Women's Sneakers – White/Black",
-            price: "₱3,790.00",
-            gender: "women",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c15.jpg",
-            title: "Chuck Taylor All Star Move Canvas Platform Women's Sneakers – White",
-            price: "₱3,990.00",
-            gender: "women",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c16.jpg",
-            title: "Run Star Trainer Women's Sneakers – Light Dune/You Dew You/Egret",
-            price: "₱4,590.00",
-            gender: "women",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c17.jpg",
-            title: "Run Star Trainer Suede Women's Sneakers – Pale Surplus/Blueberry Ice",
-            price: "₱4,590.00",
-            gender: "women",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c18.jpg",
-            title: "Run Star Hike Canvas Platform Sneakers – White/Black/Gum",
-            price: "₱5,290.00",
-            gender: "women",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c19.jpg",
-            title: "Run Star Trainer Suede Women's Sneakers – Coastal Dune/Sugar Berry/Egret",
-            price: "₱4,590.00",
-            gender: "women",
-            brand: "Converse"
-        },
-        {
-            img: "static/converse_images/c20.jpg",
-            title: "Run Star Trainer Women's Sneakers – Vernal Pool/Egret/Light Brown",
-            price: "₱4,590.00",
-            gender: "women",
-            brand: "Converse"
-        }
-    ];
-    
-
     const productContainer = document.getElementById("product-container");
     const prevBtn = document.getElementById("prevPage");
     const nextBtn = document.getElementById("nextPage");
     const pageNum = document.getElementById("pageNumber");
     const menFilter = document.getElementById("men-filter");
     const womenFilter = document.getElementById("women-filter");
-
-    let currentPage = 0;
     const productsPerPage = [16, 4];
 
     function renderPage(page) {
@@ -241,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const productElements = document.querySelectorAll(".product");
         productElements.forEach((productElement, index) => {
             const product = paginatedProducts[index];
-
             const addToCartBtn = productElement.querySelector(".add-btn");
 
             addToCartBtn.addEventListener("click", () => {
@@ -266,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 updateCartCount();
                 showCartAlert();
             });
-
         });
 
         prevBtn.disabled = page === 0;
@@ -296,7 +148,25 @@ document.addEventListener("DOMContentLoaded", () => {
     menFilter.addEventListener("change", updateFilters);
     womenFilter.addEventListener("change", updateFilters);
 
-    renderPage(currentPage);
+    updateCartCount();
+
+    // ✅ Fetch data from backend
+    fetch('/products?brand=Converse')
+        .then(response => response.json())
+        .then(data => {
+            products = data.map(product => ({
+                img: `/static/${product.image}`,
+                title: product.name,
+                price: `₱${product.price.toLocaleString()}.00`,
+                gender: product.gender.toLowerCase(),
+                brand: product.brand
+            }));
+            console.log("Fetched Converse products:", products);
+            renderPage(currentPage);
+        })
+        .catch(error => {
+            console.error("Error fetching Converse products:", error);
+        });
 });
 
 function showPopup(message = "Product is successfully added to your cart.") {

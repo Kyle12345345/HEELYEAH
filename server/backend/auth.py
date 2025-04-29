@@ -20,7 +20,7 @@ def login():
 
         if existing_user:
             if check_password_hash(existing_user.password, password):
-                session['logged_in'] = True
+                session['logged_in'] = True  # Mark user as logged in
                 session['user_name'] = existing_user.username
                 if request.is_json:
                     return jsonify(success=True)
@@ -35,6 +35,13 @@ def login():
                 return jsonify(success=False, message="User not found."), 404
 
     return render_template('login.html')
+
+
+@auth.route('/check-login', methods=['GET'])
+def check_login():
+    if 'logged_in' in session and session['logged_in']:
+        return jsonify(loggedIn=True)
+    return jsonify(loggedIn=False)
 
 
 @auth.route('/signup', methods=['GET', 'POST'])

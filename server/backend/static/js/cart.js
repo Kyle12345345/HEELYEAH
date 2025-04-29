@@ -7,9 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let checkboxStates = {};
 
-  // Check if user is logged in
-  function isUserLoggedIn() {
-    return localStorage.getItem('isLoggedIn') === 'true'; // Ensure it checks 'true' string
+  // Check if the user is logged in by calling Flask's /check-login route
+  async function isUserLoggedIn() {
+    try {
+      const response = await fetch('/check-login', {
+        method: 'GET',
+        credentials: 'same-origin'  // Ensures cookies/session are sent with the request
+      });
+
+      const data = await response.json();
+
+      return data.loggedIn; // Returns true if logged in, false otherwise
+    } catch (error) {
+      console.error("Error checking login status:", error);
+      return false;  // Default to false if there is an error
+    }
   }
 
   // Update Cart Count
@@ -169,11 +181,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkoutBtn = document.querySelector(".checkout");
 
   if (checkoutBtn) {
-    checkoutBtn.addEventListener("click", () => {
-      if (!isUserLoggedIn()) {
+    checkoutBtn.addEventListener("click", async () => {
+      
+      const loggedIn = await isUserLoggedIn();
+
+      if (!loggedIn) {
+       
         alert("You must be logged in to proceed to checkout!");
-        window.location.href = "/login"; // Redirect to login page
+        window.location.href = "/login";
         return;
+      } else {
+        
+        window.location.href = "/checkout";
       }
 
       const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
@@ -192,10 +211,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Store selected items in the checkoutCart
+      
       localStorage.setItem("checkoutCart", JSON.stringify(selectedItems));
 
-      // Remove selected items from the cart
+      
       const updatedCartItems = cartItems.filter((_, index) => {
         const checkbox = document.querySelector(`#checkbox-${index}`);
         return checkbox && !checkbox.checked;
@@ -203,9 +222,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       localStorage.setItem("cart", JSON.stringify(updatedCartItems));
 
-      window.location.href = "/checkout"; // Redirect to checkout page
+      window.location.href = "/checkout";
     });
   }
 
-  renderCart(); // Initial call to render cart
+  renderCart(); 
 });
