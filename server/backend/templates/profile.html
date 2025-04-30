@@ -44,13 +44,6 @@
         </div>
     </nav>
 
-    <!-- Home Icon Below the Navigation Bar -->
-    <div class="home-icon-container">
-        <a href="{{ url_for('views.homepage') }}" title="Home">
-            <i class="fas fa-home"></i> <!-- Home icon -->
-        </a>
-    </div>
-
     <div class="welcome-container">
         <h1>
             Welcome, <span id="username">{{ username }}</span> — step into style with <span class="brand-name">heelYeah!</span>
@@ -58,6 +51,9 @@
         <p class="subtext">
             From fresh drops to iconic classics, find the perfect pair that fits your vibe.
         </p>
+
+        <a href="{{ url_for('views.homepage') }}"><button class="cta-button">Find Your Perfect Pair!</button></a>
+
     </div>
     
     <footer>
