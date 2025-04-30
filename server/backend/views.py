@@ -38,7 +38,7 @@ def checkout():
 
 @views.route('/products')
 def get_products():
-    brand = request.args.get('brand')  # Get ?brand=Adidas from the URL
+    brand = request.args.get('brand') 
 
     if brand:
         products = Product.query.filter(Product.brand.ilike(brand)).all()

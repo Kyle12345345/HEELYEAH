@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       itemElement.innerHTML = `
         <input type="checkbox" class="item-checkbox" id="${itemId}" data-index="${index}" ${isChecked ? "checked" : ""} />
-        <img src="/${item.img}" alt="${item.title}" />
+        <img src="${item.img}" alt="${item.title}" />
         <div class="details">
           <h2>${item.brand.toUpperCase()}</h2>
           <p>${item.title}</p>
