@@ -402,6 +402,7 @@ footer {
     width: 100px;
     height: auto;
     margin-bottom: 10px;
+    margin: auto;
 }
 
 .product-item .details {

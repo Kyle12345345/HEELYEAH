@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         itemElement.classList.add("product-item");
 
         itemElement.innerHTML = `
-            <img src="/${item.img}" alt="${item.title}" />
+            <img src="${item.img}" alt="${item.title}" />
             <div class="details">
                 <h2>${item.brand.toUpperCase()}</h2>
                 <p>${item.title}</p>
