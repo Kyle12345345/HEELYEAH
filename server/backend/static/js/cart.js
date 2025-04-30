@@ -166,13 +166,14 @@ document.addEventListener("DOMContentLoaded", () => {
       let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
       const itemCheckboxes = document.querySelectorAll(".item-checkbox");
 
+      // Filter out only the checked (selected) items to remove them
       const updatedCartItems = cartItems.filter((_, index) => {
         const checkbox = document.querySelector(`#checkbox-${index}`);
-        return checkbox && !checkbox.checked;
+        return checkbox && !checkbox.checked;  // Keep only unchecked items
       });
 
       localStorage.setItem("cart", JSON.stringify(updatedCartItems));
-      checkboxStates = {};
+      checkboxStates = {};  // Reset checkbox states
       renderCart();
     });
   }
@@ -182,16 +183,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", async () => {
-      
       const loggedIn = await isUserLoggedIn();
 
       if (!loggedIn) {
-       
         alert("You must be logged in to proceed to checkout!");
         window.location.href = "/login";
         return;
       } else {
-        
         window.location.href = "/checkout";
       }
 
@@ -211,17 +209,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      
+      // Store the selected items in the checkoutCart
       localStorage.setItem("checkoutCart", JSON.stringify(selectedItems));
 
-      
+      // Filter out only the unchecked (unselected) items to stay in the cart
       const updatedCartItems = cartItems.filter((_, index) => {
         const checkbox = document.querySelector(`#checkbox-${index}`);
-        return checkbox && !checkbox.checked;
+        return checkbox && !checkbox.checked;  // Keep only the unchecked items
       });
 
+      // Update the cart in localStorage
       localStorage.setItem("cart", JSON.stringify(updatedCartItems));
 
+      // Redirect to checkout page
       window.location.href = "/checkout";
     });
   }

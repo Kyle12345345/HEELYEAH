@@ -378,3 +378,74 @@ footer {
     from { opacity: 0; transform: scale(0.8); }
     to { opacity: 1; transform: scale(1); }
   }
+
+  #order-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    width: 350px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+/* Individual Product Item */
+.product-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.product-item img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-item .details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-item .details h2 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #202020;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+
+.product-item .details p {
+    font-size: 16px;
+    color: #202020;
+}
+
+/* Price and Size */
+.product-item .price,
+.product-item .quantity {
+    font-size: 14px;
+    color: #202020;
+}
+
+/* Total Section */
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+}
+
+/* Order Summary Title */
+#order-summary h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
