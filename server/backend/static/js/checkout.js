@@ -1,37 +1,15 @@
-let currentIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-
-function showSlide(index) {
-    if (index >= slides.length) currentIndex = 0;
-    else if (index < 0) currentIndex = slides.length - 1;
-    else currentIndex = index;
-
-    document.querySelector('.slides').style.transform = `translateX(${-currentIndex * 100}%)`;
-
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[currentIndex].classList.add('active');
-}
-
-function currentSlide(index) {
-    showSlide(index);
-}
-
-setInterval(() => {
-    showSlide(currentIndex + 1);
-}, 5000);
-
 document.addEventListener("DOMContentLoaded", async () => {
     const orderSummaryDiv = document.getElementById('order-summary');
     const trackingInfoDiv = document.getElementById('tracking-info');
     const addressForm = document.getElementById('address-form');
     const savedAddressDiv = document.getElementById('saved-address');
+    const placeOrderBtn = document.getElementById('place-order-btn');
 
     // Retrieve saved address from localStorage (per user)
     const loggedInUserId = localStorage.getItem('loggedInUserId');
     const addressKey = `savedAddress_${loggedInUserId}`;
     const savedAddress = JSON.parse(localStorage.getItem(addressKey));
-    
+
     if (savedAddress) {
         savedAddressDiv.innerHTML = `
           <h4>Default Address:</h4>
@@ -50,9 +28,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Get **checkoutCart** items from localStorage
     const cartData = JSON.parse(localStorage.getItem("checkoutCart")) || [];
-    console.log("Cart Data:", cartData);  // Log cart data to check if it's correct
-
-    // Display cart products in Order Summary
     let total = 0;
 
     // Loop through cart items and display them in the checkout summary
@@ -118,7 +93,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         localStorage.setItem(addressKey, JSON.stringify(address));
 
-        savedAddressDiv.innerHTML = `
+        savedAddressDiv.innerHTML = ` 
           <h4>Default Address:</h4>
           <p>${fullname}</p>
           <p>${street}</p>
@@ -129,41 +104,81 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         addressForm.style.display = 'none';
     });
-});
 
-const placeOrderBtn = document.getElementById('place-order-btn');
-
-placeOrderBtn.addEventListener('click', () => {
-    const fullCart = JSON.parse(localStorage.getItem('cart')) || [];
-    const checkoutCart = JSON.parse(localStorage.getItem('checkoutCart')) || [];
-
-    const updatedCart = fullCart.filter(fullItem => {
-        return !checkoutCart.some(checkoutItem => (
-            fullItem.id === checkoutItem.id &&
-            fullItem.size === checkoutItem.size
-        ));
+    placeOrderBtn.addEventListener('click', () => {
+        const orderId = Math.floor(Math.random() * 1000000); // Random Order ID for demonstration
+        const currentDate = new Date().toLocaleDateString('en-PH', {
+            year: 'numeric', month: 'long', day: 'numeric'
+        });
+        const userName = localStorage.getItem('loggedInUserName');  // Assuming this is stored when the user logs in
+        const fullAddress = savedAddress ? savedAddress : "No address provided";
+        
+        const receiptHTML = `
+            <div class="receipt-popup">
+                <!-- Close Button with Font Awesome Icon -->
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+                <h1>HEELYEAH!</h1>
+                <h3>Order Receipt</h3>
+                <p><strong>Order #:</strong> ${orderId}</p>
+                <p><strong>Date:</strong> ${currentDate}</p>
+                <p><strong>Customer:</strong> ${fullAddress.fullname}</p>
+                <hr />
+                <h3>Items:</h3>
+                ${cartData.map(item => {
+                    const quantity = item.quantity || 1;
+                    const price = parseFloat(item.price.toString().replace(/[^\d.]/g, "")); 
+                    const subtotal = price * quantity; 
+                    return `
+                        <p>${item.title} | Size ${item.size} | ₱${price.toLocaleString()} x ${quantity} = ₱${subtotal.toLocaleString()}</p>
+                    `;
+                }).join('')}
+                <hr />
+                <p><strong>Shipping Address:</strong></p>
+                <p>${fullAddress.fullname}</p>
+                <p>${fullAddress.street}</p>
+                <p>${fullAddress.province}</p>
+                <p>${fullAddress.city}, ${fullAddress.zip}</p>
+                <p>${fullAddress.country}</p>
+                <p><strong>Payment:</strong> Cash on Delivery</p>
+                <p><strong>Total: ₱${total.toLocaleString()}</strong></p>
+                <hr />
+                <p>Thank you for shopping with us!</p>
+                <!-- Download Button -->
+                <button class="download-btn">Download Receipt</button>
+            </div>
+        `;
+        
+        const popup = document.createElement('div');
+        popup.className = 'popup';
+        popup.innerHTML = receiptHTML;
+        document.body.appendChild(popup);
+        
+        // Close button functionality (Redirect to homepage)
+        const closeButton = popup.querySelector('.close-btn');
+        closeButton.addEventListener('click', () => {
+            window.location.href = '/'; // Redirect to homepage (change this URL if needed)
+        });
+        
+        // Download receipt functionality (JPG)
+        const downloadButton = popup.querySelector('.download-btn');
+        downloadButton.addEventListener('click', () => {
+            // Use html2canvas to capture the receipt as an image
+            
+            html2canvas(popup.querySelector('.receipt-popup')).then(canvas => {
+                const imgData = canvas.toDataURL('image/jpeg'); // Convert canvas to JPG
+                const link = document.createElement('a');
+                link.href = imgData;
+                link.download = `receipt_${orderId}.jpg`; // Set the download filename
+                link.click(); // Trigger download
+            }).catch(err => {
+                 console.error('Error generating receipt image:', err);
+                
+            });
+            
+        });
     });
+    
+    
 
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-    localStorage.removeItem('checkoutCart');
-
-    // --- Create the popup dynamically ---
-    const popup = document.createElement('div');
-    popup.className = 'popup';
-    popup.style.display = 'flex'; // Show the popup immediately
-
-    const popupContent = document.createElement('div');
-    popupContent.className = 'popup-content';
-    popupContent.innerHTML = `
-        <p>Your order has been placed successfully!</p>
-    `;
-
-    popup.appendChild(popupContent);
-    document.body.appendChild(popup);
-
-    // --- Auto close the popup after 2 seconds ---
-    setTimeout(() => {
-        popup.remove(); // Remove the popup from DOM
-        window.location.href = "/place_order"; // Redirect after close
-    }, 1000); // 1000 milliseconds = 1 second
+    
 });

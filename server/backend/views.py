@@ -56,4 +56,10 @@ def get_products():
             "size": product.size
         })
 
+
+
     return jsonify(product_list)
+
+@views.route('/men')
+def men():
+    return render_template('men.html')

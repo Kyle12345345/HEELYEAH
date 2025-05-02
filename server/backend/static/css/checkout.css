@@ -331,52 +331,12 @@ footer {
     cursor: pointer;
     transition: background 0.3s;
     margin-left: 200px;
+    bottom: 20px;
+    right: 20px;
   }
   
   #place-order-btn:hover {
     background-color: #373737;
-  }
-
-  /* Add this to your existing CSS */
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none; /* Hidden initially */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .popup-content {
-    background: white;
-    padding: 30px 40px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 300px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    animation: popupFade 0.3s ease;
-  }
-  
-  #close-popup {
-    margin-top: 20px;
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  #close-popup:hover {
-    background-color: #45a049;
-  }
-  
-  @keyframes popupFade {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
   }
 
   #order-summary {
@@ -399,7 +359,7 @@ footer {
 }
 
 .product-item img {
-    width: 100px;
+    width: 200px;
     height: auto;
     margin-bottom: 10px;
     margin: auto;
@@ -449,4 +409,187 @@ footer {
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
+}
+
+.receipt-popup {
+  width: 400px;
+  max-width: 90%;
+  margin: 50px auto 0; /* Adds margin at the top */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #000;
+  text-align: center;
+}
+
+
+.receipt-popup h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000; /* Black for headings */
+  margin-bottom: 10px;
+}
+
+.receipt-popup h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.receipt-popup p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000; /* Black text */
+  margin: 5px 0;
+}
+
+.receipt-popup hr {
+  border: 1px solid #000; /* Black separator */
+  margin: 10px 0;
+}
+
+.receipt-popup .product-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #000; /* Black separator */
+  padding-bottom: 10px;
+}
+
+.receipt-popup .product-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.receipt-popup .product-item .details {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.receipt-popup .product-item .details h2 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000; /* Black for product names */
+  margin-bottom: 5px;
+}
+
+.receipt-popup .product-item .details p {
+  font-size: 12px;
+  color: #000; /* Black for product details */
+}
+
+.receipt-popup .product-item .quantity {
+  font-size: 14px;
+  color: #000; /* Black for quantity */
+}
+
+.receipt-popup .product-item .price {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000; /* Black for price */
+}
+
+.receipt-popup .total {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #000; /* Black for total */
+}
+
+.receipt-popup .payment {
+  font-size: 14px;
+  color: #000; /* Black for payment method */
+  margin-top: 20px;
+}
+
+.receipt-popup .thank-you {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #000; /* Black for thank-you note */
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup .popup-content {
+  background-color: #fff; /* White background for the popup */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Black shadow around the popup */
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #5e5e5e; /* Red color on hover */
+}
+
+.close-btn i {
+  font-size: 24px;
+}
+
+
+/* Popup Styling */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: auto;
+}
+
+.receipt-popup {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Download Button */
+.download-btn {
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
 }
