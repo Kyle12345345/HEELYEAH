@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#808080">
+    <title>heelYeah! - FAQ</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.jpg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/shopbygender.css') }}">
+    <body style="background-color: #CDCCCC;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+     
+<body>
+
+    <nav class="header">
+        <div class="logo">
+            <a href="{{ url_for('views.homepage') }}">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" width="170" height="50" alt="logo">
+            </a>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn">New Arrivals</button>
+            <button class="nav-btn">Men</button>
+            <button class="nav-btn">Women</button>
+            
+            <div class="dropdown">
+                <button class="nav-btn dropdown-btn">Brands</button>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ url_for('views.nike') }}">Nike</a></li>
+                    <li><a href="{{ url_for('views.adidas')}}">Adidas</a></li>
+                    <li><a href="{{ url_for('views.newbalance')}}">New Balance</a></li>
+                    <li><a href="{{ url_for('views.converse')}}">Converse</a></li>
+                    <li><a href="{{ url_for('views.puma')}}">Puma</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nav-icons">
+            <a href="{{ url_for('auth.profile') if session.get('logged_in') else url_for('auth.login') }}">
+                <i class="fas fa-user"></i>
+            </a>
+            <a href="{{ url_for('views.cart') }}"><i class="fas fa-shopping-cart"></i></a>
+            {% if session.get('logged_in') %}
+                <a href="{{ url_for('auth.logout') }}">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            {% endif %}
+        </div>
+        
+    </nav><br>
+
+    <div class="faq-container">
+        <h2>Frequently Asked Questions (FAQ)</h2>
+
+        <div class="faq-item">
+            <h3>1. What types of shoes do you offer?</h3>
+            <p>We offer a wide variety of shoes, including sneakers, and running shoes. Our collection is suitable for all occasions and available for men, and women.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>2. How can I find the right size for me?</h3>
+            <p>We provide a detailed size guide on each product page, which includes measurements for different shoe sizes. If you're still unsure, we recommend checking the sizing chart or reading product reviews for insights from other customers about fit.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>3. How do I know if the shoes will fit?</h3>
+            <p>If the shoes you ordered don't fit properly, we offer a hassle-free return and exchange policy within 30 days. You can return or exchange shoes that are unworn, with the original packaging and tags intact.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>4. Can I exchange or return shoes after they’ve been worn?</h3>
+            <p>We only accept returns or exchanges for unworn shoes with the original tags and packaging. Please try on the shoes indoors and ensure they're in new condition before returning them.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>5. How long will it take to receive my order?</h3>
+            <p>Orders are processed within 1-2 business days. Delivery times vary based on your location, but most orders will arrive within 3-7 business days. You'll receive a tracking number once your order has shipped.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>6. Do you offer international shipping?</h3>
+            <p>Yes, we offer international shipping to select countries. Shipping rates and delivery times vary by location. Check the shipping section during checkout for more details.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>7. How can I track my order?</h3>
+            <p>Once your order has been shipped, you will receive a tracking number via email. You can use this tracking number to check the status of your delivery on the courier's website.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>8. What payment methods do you accept?</h3>
+            <p>We accept a variety of payment methods, including credit/debit cards (Visa, MasterCard, American Express), PayPal, and other secure payment gateways.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>9. Are the prices on your website inclusive of taxes?</h3>
+            <p>The prices displayed on our website do not include taxes, which may be added at checkout depending on your location. The final price will include all applicable taxes and shipping fees.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>10. Do you have a store or showroom I can visit?</h3>
+            <p>We currently operate online only, but we strive to offer an easy and seamless shopping experience. Feel free to reach out if you have questions or need assistance with product details.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>11. How do I clean and maintain my shoes?</h3>
+            <p>To maintain your shoes, follow the care instructions on the product page. Generally, clean your shoes regularly with a soft cloth, use a suitable cleaner for leather or fabric, and store them in a dry, cool place to prevent damage.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>12. Can I cancel or modify my order after placing it?</h3>
+            <p>Orders are processed quickly, but we try our best to accommodate changes. If you need to cancel or modify an order, please contact us within 24 hours of placing it. After that, we may not be able to make any changes.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>13. How can I contact customer support?</h3>
+            <p>You can reach our customer support team by emailing us at [support@shoewebsite.com] or by using the contact form on our website. We respond to inquiries within 24-48 hours.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>14. Do you offer gift cards?</h3>
+            <p>Yes, we offer gift cards in various denominations. You can purchase them directly from our website, and they can be used for any future purchase.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>15. What should I do if I receive a defective or damaged item?</h3>
+            <p>We are committed to providing quality products. If you receive a damaged or defective item, please contact our customer service team immediately, and we’ll arrange for a replacement or refund.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="/aboutus">About us</a></li>
+                    <li><a href="/termsandconditions">Terms & Conditions</a></li>
+                    <li><a href="/privacypolicy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-sectionto">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contactus">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/shopbygender.js') }}"></script>
+
+</body>
+</html>

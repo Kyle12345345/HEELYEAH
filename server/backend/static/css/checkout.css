@@ -175,56 +175,90 @@ ul:hover a:hover {
 }
 
 footer {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    width: 100%;
-    margin-top: auto;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  position: fixed; /* Fixes the footer at the bottom */
+  bottom: 0; /* Positions the footer at the bottom */
+  left: 0; /* Ensures it spans the entire width of the page */
+  z-index: 1000; /* Ensures it stays on top of other elements */
 }
 
 .footer-content {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
 
 .footer-section h4 {
-    margin-bottom: 10px;
-    color: white;
+  margin-bottom: 10px;
+  color: white;
+  margin-left: 150px;
 }
 
 .footer-section ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .footer-section ul li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .footer-section ul li a {
-    text-decoration: none;
-    color: gray;
-    font-size: 14px;
-    transition: all 0.3s ease-in-out;
-    position: relative;
+  text-decoration: none;
+  color: gray;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  text-align: center;
 }
 
 .footer-section ul li a:hover {
-    color: white;
+  color: white;
 }
 
+.footer-sectionto h4 {
+  margin-bottom: 10px;
+  color: white;
+  margin-left: 40px;
+}
+
+.footer-sectionto ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-sectionto ul li {
+  margin-bottom: 5px;
+}
+
+.footer-sectionto ul li a {
+  text-decoration: none;
+  color: gray;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  text-align: center;
+}
+
+.footer-sectionto ul li a:hover {
+  color: white;
+}
+
+/* Remove the underline on hover */
 .footer-section ul li a::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: width 0.3s ease-in-out;
-}
-
-.footer-section ul li a:hover::after {
-    width: 100%;
+  content: "";
+  display: none; /* Hide the line */
 }
 
 .checkout-container {
@@ -250,7 +284,7 @@ footer {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 130px;
   }
   
   h2 {

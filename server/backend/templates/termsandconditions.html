@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#808080">
+    <title>heelYeah! - Terms & Conditions</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.jpg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/shopbygender.css') }}">
+    <body style="background-color: #CDCCCC;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <nav class="header">
+        <div class="logo">
+            <a href="{{ url_for('views.homepage') }}">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" width="170" height="50" alt="logo">
+            </a>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn">New Arrivals</button>
+            <button class="nav-btn">Men</button>
+            <button class="nav-btn">Women</button>
+            
+            <div class="dropdown">
+                <button class="nav-btn dropdown-btn">Brands</button>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ url_for('views.nike') }}">Nike</a></li>
+                    <li><a href="{{ url_for('views.adidas')}}">Adidas</a></li>
+                    <li><a href="{{ url_for('views.newbalance')}}">New Balance</a></li>
+                    <li><a href="{{ url_for('views.converse')}}">Converse</a></li>
+                    <li><a href="{{ url_for('views.puma')}}">Puma</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nav-icons">
+            <a href="{{ url_for('auth.profile') if session.get('logged_in') else url_for('auth.login') }}">
+                <i class="fas fa-user"></i>
+            </a>
+            <a href="{{ url_for('views.cart') }}"><i class="fas fa-shopping-cart"></i></a>
+            {% if session.get('logged_in') %}
+                <a href="{{ url_for('auth.logout') }}">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            {% endif %}
+        </div>
+        
+    </nav><br>
+
+    <section class="terms-conditions">
+        <h2>Terms and Conditions</h2>
+
+        <p><strong>Last Updated: May 5,2025</strong></p>
+
+        <p>Welcome to heelYEAH!, you agree to comply with and be bound by the following Terms and Conditions. Please read these terms carefully before using our services.</p>
+
+        <h3>1. Acceptance of Terms</h3>
+        <p>By accessing and using our Site, you acknowledge that you have read, understood, and agree to these Terms and Conditions and all applicable laws and regulations. If you do not agree with these terms, please do not use the Site.</p>
+
+        <h3>2. Changes to Terms</h3>
+        <p>heelYEAH! reserves the right to update or modify these Terms and Conditions at any time. Any changes will be posted on this page with an updated date. Your continued use of the Site after such changes constitutes your acceptance of the new terms.</p>
+
+        <h3>3. Account Registration</h3>
+        <p>In order to make purchases or access certain services, you may be required to create an account. You agree to provide accurate and complete information when registering and to update your information as necessary. You are responsible for maintaining the confidentiality of your account credentials.</p>
+
+        <h3>4. Products and Pricing</h3>
+        <p>All products listed on our Site are subject to availability. While we strive to ensure that all information is accurate, we do not guarantee that the product descriptions, pricing, or other content are error-free. Prices and availability are subject to change without notice.</p>
+
+        <h3>5. Order and Payment</h3>
+        <p>Once you have made your selection and placed an order, we will process your payment through a secure payment gateway. We accept various payment methods including credit/debit cards and other payment options. By placing an order, you confirm that you are the authorized holder of the payment method used.</p>
+
+        <h3>6. Shipping and Delivery</h3>
+        <p>We offer shipping services to various locations. The shipping charges and delivery times will be communicated at the time of checkout. heelYEAH! is not responsible for any delays, damages, or losses that may occur during the shipping process. Once the order is shipped, ownership and risk pass to the customer.</p>
+
+        <h3>7. Returns and Exchanges</h3>
+        <p>We want you to be satisfied with your purchase. If you are not completely happy with your order, we offer a [X]-day return policy, provided the product is unused, unworn, and in original packaging. Please refer to our Return Policy page for detailed instructions.</p>
+
+        <h3>8. Intellectual Property</h3>
+        <p>All content, including text, graphics, logos, images, and software on the Site, is the property of heelYEAH! and is protected by copyright, trademark, and other intellectual property laws. You may not copy, reproduce, distribute, or modify any content without express written permission from heelYEAH!.</p>
+
+        <h3>9. User Conduct</h3>
+        <p>By using the Site, you agree not to:
+        <ul>
+            <li>Violate any applicable laws or regulations.</li>
+            <li>Use the Site for unlawful or unauthorized purposes.</li>
+            <li>Engage in any activity that may harm the Site or interfere with other users’ access.</li>
+            <li>Upload or transmit any harmful code, viruses, or malware.</li>
+        </ul>
+        </p>
+
+        <h3>10. Limitation of Liability</h3>
+        <p>To the maximum extent permitted by law, heelYEAH! shall not be held liable for any direct, indirect, incidental, special, or consequential damages arising from your use of the Site or the products purchased from it.</p>
+
+        <h3>11. Privacy</h3>
+        <p>We respect your privacy. Please refer to our Privacy Policy for details on how we collect, use, and protect your personal information.</p>
+
+        <h3>12. Governing Law</h3>
+        <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of Philippines. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts located in Philippines.</p>
+
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="/aboutus">About us</a></li>
+                    <li><a href="/termsandconditions">Terms & Conditions</a></li>
+                    <li><a href="/privacypolicy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-sectionto">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/shopbygender.js') }}"></script>
+    
+</body>
+</html>

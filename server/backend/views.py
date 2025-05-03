@@ -63,3 +63,24 @@ def get_products():
 @views.route('/men')
 def men():
     return render_template('men.html')
+
+@views.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
+
+@views.route('/termsandconditions')
+def termsandconditions():
+    return render_template('termsandconditions.html')
+
+@views.route('/privacypolicy')
+def privacypolicy():
+    return render_template('privacypolicy.html')
+
+@views.route('/faq')
+def faq():
+    return render_template('faq.html')
+
+@views.route('/contactus')
+def contactus():
+    return render_template('contactus.html')
+

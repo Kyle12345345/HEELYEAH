@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#808080">
+    <title>heelYeah! - Home</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.jpg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/shopbygender.css') }}">
+    <body style = "background-color: #CDCCCC;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+     
+<body>
+
+    <nav class="header">
+        <div class="logo">
+            <a href="{{ url_for('views.homepage') }}">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" width="170" height="50" alt="logo">
+            </a>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn">New Arrivals</button>
+            <button class="nav-btn">Men</button>
+            <button class="nav-btn">Women</button>
+            
+            <div class="dropdown">
+                <button class="nav-btn dropdown-btn">Brands</button>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ url_for('views.nike') }}">Nike</a></li>
+                    <li><a href="{{ url_for('views.adidas')}}">Adidas</a></li>
+                    <li><a href="{{ url_for('views.newbalance')}}">New Balance</a></li>
+                    <li><a href="{{ url_for('views.converse')}}">Converse</a></li>
+                    <li><a href="{{ url_for('views.puma')}}">Puma</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nav-icons">
+            <a href="{{ url_for('auth.profile') if session.get('logged_in') else url_for('auth.login') }}">
+                <i class="fas fa-user"></i>
+            </a>
+            <a href="{{ url_for('views.cart') }}"><i class="fas fa-shopping-cart"></i></a>
+            {% if session.get('logged_in') %}
+                <a href="{{ url_for('auth.logout') }}">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            {% endif %}
+        </div>
+        
+    </nav><br>
+
+    <!-- About Us Section -->
+    <section class="about-us">
+        <h2>About Us</h2><br>
+        <p>Welcome to heelYEAH!, where style meets comfort, and quality is always a priority. Our passion is to offer shoes that cater to every occasion, every style, and every personality. Whether you’re looking for something casual, athletic, or elegant, we have the perfect pair to complete your look.</p>
+        <p>We believe that shoes should not only look good but also feel amazing, which is why we source only the finest materials and work with top designers to ensure every product delivers lasting comfort and durability. Our mission is to bring you the latest trends in footwear at affordable prices, without compromising on quality.</p><br>
+        <p>At heelYEAH!, customer satisfaction is at the heart of everything we do. We’re committed to providing an easy, enjoyable shopping experience—from browsing our wide selection to fast shipping and responsive customer service.</p>
+        <p>Thank you for choosing heelYEAH!—your one-stop shop for shoes that keep you stepping confidently, no matter where life takes you!</p>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="/aboutus">About us</a></li>
+                    <li><a href="/termsandconditions">Terms & Conditions</a></li>
+                    <li><a href="/privacypolicy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-sectionto">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contactus">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/shopbygender.js') }}"></script>
+    
+    
+</body>
+</html>
