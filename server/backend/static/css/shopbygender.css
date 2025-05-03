@@ -273,6 +273,101 @@ footer {
 
 
 
+/* Footer Specific Styles for FAQ and Contact Us Pages */
+.contact-container, .faq-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Ensure text is centered */
+}
+
+/* Consistent Font Sizes for FAQ and Contact Us */
+.contact-container h2, .faq-container h2 {
+    font-size: 1.6rem; /* Smaller font size */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-container p, .faq-container p {
+    font-size: 1rem; /* Smaller font size */
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.contact-details h3, .faq-item h3 {
+    font-size: 1.2rem; /* Smaller size */
+    color: #464646;
+    margin-bottom: 10px;
+}
+
+.contact-details p, .faq-item p {
+    font-size: 1rem; /* Smaller size */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Contact Us and FAQ Social Media Icons */
+.contact-details ul, .faq-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact-details ul li, .faq-container ul li {
+    margin-bottom: 0;
+}
+
+.contact-details ul li a, .faq-container ul li a {
+    font-size: 1rem; /* Reduced size */
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details ul li a:hover, .faq-container ul li a:hover {
+    color: #007BFF; /* Hover effect color */
+}
+
+/* Social Media Icons Styling */
+.contact-details ul li a i, .faq-container ul li a i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+/* Media Queries for Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section, .footer-sectionto {
+        margin-bottom: 20px;
+    }
+
+    .footer-section ul li a, .footer-sectionto ul li a {
+        font-size: 12px;
+    }
+
+    .contact-container h2, .faq-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .contact-container p, .faq-container p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
 .aboutus h2 {
     font-size: 2rem;
     color: #000000; /* Black color for the title */
