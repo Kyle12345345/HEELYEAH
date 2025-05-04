@@ -56,13 +56,7 @@ def get_products():
             "size": product.size
         })
 
-
-
     return jsonify(product_list)
-
-@views.route('/men')
-def men():
-    return render_template('men.html')
 
 @views.route('/aboutus')
 def aboutus():
@@ -84,3 +78,31 @@ def faq():
 def contactus():
     return render_template('contactus.html')
 
+@views.route('/men/shoes')
+def men():
+    return render_template('men.html')
+
+@views.route('/women/shoes')
+def women():
+    return render_template('women.html')
+
+@views.route('/gender/products')
+def get_gender_products():
+    gender = request.args.get('gender')
+    
+    query = Product.query
+    if gender:
+        query = query.filter(Product.gender.ilike(gender))
+
+    products = query.all()
+
+    product_list = [{
+        "brand": p.brand,
+        "name": p.name,
+        "price": p.price,
+        "image": p.image,
+        "gender": p.gender,
+        "size": p.size
+    } for p in products]
+
+    return jsonify(product_list)
