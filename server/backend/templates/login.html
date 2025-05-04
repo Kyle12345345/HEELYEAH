@@ -22,8 +22,8 @@
 
         <div class="navigation">
             <button class="nav-btn">New Arrivals</button>
-            <button class="nav-btn">Men</button>
-            <button class="nav-btn">Women</button>
+            <a href="{{ url_for('views.men')}}"><button class="nav-btn">Men</button></a>
+            <a href="{{ url_for('views.women')}}"><button class="nav-btn">Women</button></a>
             
             <div class="dropdown">
                 <button class="nav-btn dropdown-btn">Brands</button>

@@ -17,7 +17,7 @@ function showSlide(index) {
 
 function createProductCard(product) {
     return `
-        <div class="product" data-gender="${product.gender}">
+        <div class="product">
             <img src="${product.img}" alt="${product.title}">
             <h3>${product.title}</h3>
             <p class="price">${product.price}</p>
@@ -73,18 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevBtn = document.getElementById("prevPage");
     const nextBtn = document.getElementById("nextPage");
     const pageNum = document.getElementById("pageNumber");
-    const menFilter = document.getElementById("men-filter");
-    const womenFilter = document.getElementById("women-filter");
     const productsPerPage = [28, 22];
 
     function renderPage(page) {
         productContainer.innerHTML = "";
 
-        let filteredProducts = products.filter(product => {
-            if (menFilter.checked && product.gender === "men") return true;
-            if (womenFilter.checked && product.gender === "women") return true;
-            return (!menFilter.checked && !womenFilter.checked);
-        });
+        // No filtering based on gender anymore
+        let filteredProducts = products;
 
         const start = page === 0 ? 0 : 28;
         const end = start + productsPerPage[page];
@@ -126,11 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pageNum.textContent = `Page ${page + 1}`;
     }
 
-    function updateFilters() {
-        currentPage = 0;
-        renderPage(currentPage);
-    }
-
     prevBtn.addEventListener("click", function () {
         if (currentPage > 0) {
             currentPage--;
@@ -144,9 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
             renderPage(currentPage);
         }
     });
-
-    menFilter.addEventListener("change", updateFilters);
-    womenFilter.addEventListener("change", updateFilters);
 
     updateCartCount();
 

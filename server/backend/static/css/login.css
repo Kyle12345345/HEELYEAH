@@ -184,12 +184,13 @@ footer {
     bottom: 0; /* Positions the footer at the bottom */
     left: 0; /* Ensures it spans the entire width of the page */
     z-index: 1000; /* Ensures it stays on top of other elements */
+    height: 90px;
 }
 
 .footer-content {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 30px;
 }
 
 .footer-section h4 {
@@ -280,6 +281,7 @@ body{
     width: 768px;
     max-width: 100%;
     min-height: 380px;
+    margin-bottom: 25px;
 }
 
 .container p{

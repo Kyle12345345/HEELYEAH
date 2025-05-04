@@ -23,8 +23,8 @@
 
         <div class="navigation">
             <button class="nav-btn">New Arrivals</button>
-            <button class="nav-btn">Men</button>
-            <button class="nav-btn">Women</button>
+            <a href="{{ url_for('views.men')}}"><button class="nav-btn">Men</button></a>
+            <a href="{{ url_for('views.women')}}"><button class="nav-btn">Women</button></a>
             
             <div class="dropdown">
                 <button class="nav-btn dropdown-btn">Brands</button>
@@ -111,11 +111,11 @@
         <h1>Shop by Gender</h1>
         <div class="shop-categories">
             <div class="category">
-                <img src="{{ url_for('static', filename='images/MAD.jpg') }}" alt="Men">
+                <a href="{{ url_for('views.men')}}"><img src="{{ url_for('static', filename='images/MAD.jpg') }}" alt="Men"></a>
                 <div class="category-title">MEN</div>
             </div>
             <div class="category">
-                <img src="{{ url_for('static', filename='images/ADWM.jpg') }}" alt="Women">
+                <a href="{{ url_for('views.women')}}"><img src="{{ url_for('static', filename='images/ADWM.jpg') }}" alt="Women"></a>
                 <div class="category-title">WOMEN</div>
             </div>
             <div class="category new-arrivals">

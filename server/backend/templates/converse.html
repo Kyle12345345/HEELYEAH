@@ -32,8 +32,8 @@
 
         <div class="navigation">
             <button class="nav-btn">New Arrivals</button>
-            <button class="nav-btn">Men</button>
-            <button class="nav-btn">Women</button>
+            <a href="{{ url_for('views.men')}}"><button class="nav-btn">Men</button></a>
+            <a href="{{ url_for('views.men')}}"><button class="nav-btn">Women</button></a>
             
             <div class="dropdown">
                 <button class="nav-btn dropdown-btn">Brands</button>
@@ -65,7 +65,7 @@
         <div class="nike-logo">
             <img src="{{ url_for('static', filename='images/lgC.png') }}" alt="Nike Logo">
         </div>
-        <div class="center-image">
+        <div class="converse-image">
             <img src="{{ url_for('static', filename='converse_images/converse ci.png') }}" alt="Center Image">
         </div>
         <div class="gender-container">
