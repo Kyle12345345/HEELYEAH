@@ -103,16 +103,16 @@
             <div class="footer-section">
                 <h4>About</h4>
                 <ul>
-                    <li><a href="/aboutus">About us</a></li>
-                    <li><a href="/termsandconditions">Terms & Conditions</a></li>
-                    <li><a href="/privacypolicy">Privacy Policy</a></li>
+                    <li><a href="{{ url_for('views.aboutus')}}">About us</a></li>
+                    <li><a href="{{ url_for('views.termsandconditions')}}">Terms & Conditions</a></li>
+                    <li><a href="{{ url_for('views.privacypolicy')}}">Privacy Policy</a></li>
                 </ul>
             </div>
-            <div class="footer-sectionto">
+            <div class="footer-section">
                 <h4>Customer Service</h4>
                 <ul>
-                    <li><a href="/faq">FAQ</a></li>
-                    <li><a href="/contactus">Contact us</a></li>
+                    <li><a href="{{ url_for('views.faq')}}">FAQ</a></li>
+                    <li><a href="{{ url_for('views.contactus')}}">Contact us</a></li>
                 </ul>
             </div>
         </div>
