@@ -179,34 +179,34 @@ footer {
   color: white;
   padding: 20px;
   width: 100%;
-  position: fixed; /* Fixes the footer at the bottom */
-  bottom: 0; /* Positions the footer at the bottom */
-  left: 0; /* Ensures it spans the entire width of the page */
-  z-index: 1000; /* Ensures it stays on top of other elements */
+  height: 100px;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
 }
 
+/* Footer content */
 .footer-content {
   display: flex;
   justify-content: center;
   gap: 50px;
 }
 
-.footer-section h4 {
+.footer-section h4, .footer-sectionto h4 {
   margin-bottom: 10px;
   color: white;
-  margin-left: 150px;
 }
 
-.footer-section ul {
+.footer-section ul, .footer-sectionto ul {
   list-style: none;
   padding: 0;
 }
 
-.footer-section ul li {
+.footer-section ul li, .footer-sectionto ul li {
   margin-bottom: 5px;
 }
 
-.footer-section ul li a {
+.footer-section ul li a, .footer-sectionto ul li a {
   text-decoration: none;
   color: gray;
   font-size: 14px;
@@ -219,51 +219,14 @@ footer {
   text-align: center;
 }
 
-.footer-section ul li a:hover {
+.footer-section ul li a:hover, .footer-sectionto ul li a:hover {
   color: white;
-}
-
-.footer-sectionto h4 {
-  margin-bottom: 10px;
-  color: white;
-  margin-left: 40px;
-}
-
-.footer-sectionto ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-sectionto ul li {
-  margin-bottom: 5px;
-}
-
-.footer-sectionto ul li a {
-  text-decoration: none;
-  color: gray;
-  font-size: 14px;
-  padding: 10px 20px;
-  border: 2px solid transparent;
-  border-radius: 5px;
-  background-color: transparent;
-  transition: all 0.3s ease-in-out;
-  display: inline-block;
-  text-align: center;
-}
-
-.footer-sectionto ul li a:hover {
-  color: white;
-}
-
-/* Remove the underline on hover */
-.footer-section ul li a::after {
-  content: "";
-  display: none; /* Hide the line */
 }
 
 .checkout-container {
     max-width: 1200px;
     margin: auto;
+    
   }
   
   h1 {
@@ -284,7 +247,7 @@ footer {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
-    margin-bottom: 130px;
+    margin-bottom: 10px;
   }
   
   h2 {
@@ -341,12 +304,12 @@ footer {
   }
 
   .tracking-card {
+    position: relative;
+    padding-bottom: 60px; /* Ensure space for button */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%; /* Make sure card stretches fully */
-    position: relative;
-  }
+    min-height: 300px; /* Ensure height if content is small */
+}
   
   #tracking-info {
     flex-grow: 1; /* tracking-info takes the space */
@@ -354,8 +317,7 @@ footer {
   }
   
   #place-order-btn {
-    align-self: flex-end; /* Push the button to the right */
-    margin-top: 270px;
+    margin-top: 30px;
     padding: 12px 24px;
     background-color: #000000;
     color: white;
@@ -364,23 +326,24 @@ footer {
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s;
-    margin-left: 200px;
-    bottom: 20px;
-    right: 20px;
-  }
-  
-  #place-order-btn:hover {
-    background-color: #373737;
-  }
+    align-self: flex-end;
+    margin-top: 450px;
+}
 
-  #order-summary {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    width: 350px;
-    background-color: #ffffff;
-    border-radius: 8px;
+#place-order-btn:hover {
+    background-color: #373737;
+}
+#order-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  width: 350px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  height: auto; /* Let it grow based on content */
+  max-height: 90vh; /* Optional: prevent it from growing beyond screen */
+  overflow-y: auto; /* Optional: adds scroll if content is too long */
 }
 
 /* Individual Product Item */
@@ -448,7 +411,6 @@ footer {
 .receipt-popup {
   width: 400px;
   max-width: 90%;
-  margin: 50px auto 0; /* Adds margin at the top */
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
@@ -456,6 +418,8 @@ footer {
   font-family: Arial, sans-serif;
   color: #000;
   text-align: center;
+  margin-top: 150px;
+  margin-bottom: 10px;
 }
 
 

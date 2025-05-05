@@ -179,35 +179,34 @@ footer {
     color: white;
     padding: 20px;
     width: 100%;
-    position: fixed; /* Fixes the footer at the bottom */
-    bottom: 0; /* Positions the footer at the bottom */
-    left: 0; /* Ensures it spans the entire width of the page */
-    z-index: 1000; 
     height: 100px;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 
+/* Footer content */
 .footer-content {
     display: flex;
     justify-content: center;
     gap: 50px;
 }
 
-.footer-section h4 {
+.footer-section h4, .footer-sectionto h4 {
     margin-bottom: 10px;
     color: white;
-   
 }
 
-.footer-section ul {
+.footer-section ul, .footer-sectionto ul {
     list-style: none;
     padding: 0;
 }
 
-.footer-section ul li {
+.footer-section ul li, .footer-sectionto ul li {
     margin-bottom: 5px;
 }
 
-.footer-section ul li a {
+.footer-section ul li a, .footer-sectionto ul li a {
     text-decoration: none;
     color: gray;
     font-size: 14px;
@@ -220,46 +219,8 @@ footer {
     text-align: center;
 }
 
-.footer-section ul li a:hover {
+.footer-section ul li a:hover, .footer-sectionto ul li a:hover {
     color: white;
-}
-
-.footer-sectionto h4 {
-    margin-bottom: 10px;
-    color: white;
-    
-}
-
-.footer-sectionto ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-sectionto ul li {
-    margin-bottom: 5px;
-}
-
-.footer-sectionto ul li a {
-    text-decoration: none;
-    color: gray;
-    font-size: 14px;
-    padding: 10px 20px;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    background-color: transparent;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;
-    text-align: center;
-}
-
-.footer-sectionto ul li a:hover {
-    color: white;
-}
-
-/* Remove the underline on hover */
-.footer-section ul li a::after {
-    content: "";
-    display: none; /* Hide the line */
 }
 
 .nike-logo img {
@@ -304,8 +265,7 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 .pagination button {

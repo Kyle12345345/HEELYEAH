@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const savedAddress = JSON.parse(localStorage.getItem(addressKey));
 
     if (savedAddress) {
-        savedAddressDiv.innerHTML = `
+        savedAddressDiv.innerHTML = ` 
           <h4>Default Address:</h4>
           <p>${savedAddress.fullname}</p>
           <p>${savedAddress.street}</p>
@@ -143,8 +143,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <p><strong>Total: ₱${total.toLocaleString()}</strong></p>
                 <hr />
                 <p>Thank you for shopping with us!</p>
-                <!-- Download Button -->
-                <button class="download-btn">Download Receipt</button>
+                <!-- Message instead of Download Button -->
+                <hr><p>Please take a screenshot of the receipt before you exit.</p>
             </div>
         `;
         
@@ -158,27 +158,5 @@ document.addEventListener("DOMContentLoaded", async () => {
         closeButton.addEventListener('click', () => {
             window.location.href = '/'; // Redirect to homepage (change this URL if needed)
         });
-        
-        // Download receipt functionality (JPG)
-        const downloadButton = popup.querySelector('.download-btn');
-        downloadButton.addEventListener('click', () => {
-            // Use html2canvas to capture the receipt as an image
-            
-            html2canvas(popup.querySelector('.receipt-popup')).then(canvas => {
-                const imgData = canvas.toDataURL('image/jpeg'); // Convert canvas to JPG
-                const link = document.createElement('a');
-                link.href = imgData;
-                link.download = `receipt_${orderId}.jpg`; // Set the download filename
-                link.click(); // Trigger download
-            }).catch(err => {
-                 console.error('Error generating receipt image:', err);
-                
-            });
-            
-        });
     });
-    
-    
-
-    
 });
