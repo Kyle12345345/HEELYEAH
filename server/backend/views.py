@@ -106,3 +106,5 @@ def get_gender_products():
     } for p in products]
 
     return jsonify(product_list)
+
+

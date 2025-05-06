@@ -133,11 +133,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                     `;
                 }).join('')}
                 <hr />
-                <p><strong>Shipping Address:</strong></p>
-                <p>${fullAddress.fullname}</p>
+                <p><strong>Shipping Details:</strong></p>
                 <p>${fullAddress.street}</p>
-                <p>${fullAddress.province}</p>
-                <p>${fullAddress.city}, ${fullAddress.zip}</p>
+                <p>${fullAddress.city}
+                <p>${fullAddress.province}, ${fullAddress.zip}</p>
                 <p>${fullAddress.country}</p>
                 <p><strong>Payment:</strong> Cash on Delivery</p>
                 <p><strong>Total: ₱${total.toLocaleString()}</strong></p>
