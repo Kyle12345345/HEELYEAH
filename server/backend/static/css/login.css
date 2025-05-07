@@ -184,7 +184,7 @@ footer {
     bottom: 0; /* Positions the footer at the bottom */
     left: 0; /* Ensures it spans the entire width of the page */
     z-index: 1000; /* Ensures it stays on top of other elements */
-    height: 90px;
+    height: 100px;
 }
 
 .footer-content {
@@ -219,6 +219,7 @@ footer {
     transition: all 0.3s ease-in-out;
     display: inline-block;
     text-align: center;
+    margin-left: -25px;
 }
 
 .footer-section ul li a:hover {
@@ -487,4 +488,12 @@ body{
 
 .container.active .toggle-right{
     transform: translateX(200%);
+}
+
+#error-message {
+    color: red;
+    display: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 10px;
 }
