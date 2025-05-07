@@ -43,7 +43,7 @@
             </a>
             <a href="{{ url_for('views.cart') }}"><i class="fas fa-shopping-cart"></i></a>
             {% if session.get('logged_in') %}
-                <a href="{{ url_for('auth.logout') }}">
+                <a href="{{ url_for('auth.logout') }}" id="logout-btn">
                     <i class="fas fa-sign-out-alt"></i>
                 </a>
             {% endif %}
@@ -142,7 +142,7 @@
     
 
     <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
-    
-    
+    <script src="{{ url_for('static', filename='js/logout.js') }}"></script>
+   
 </body>
 </html>
