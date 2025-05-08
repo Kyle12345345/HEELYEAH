@@ -147,6 +147,7 @@ ul:hover a:hover {
     right: 70px;
     display: flex;
     gap: 30px;
+    margin-top: -35px;
 }
 
 .nav-icons a {
@@ -323,5 +324,133 @@ footer {
 
 .cta-button:hover {
     background-color: #6c6c6c; /* Darker shade when hovered */
+}
+
+/* Hide the navigation links by default on mobile */
+.navigation {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0 0 10px;
+    padding: 0;
+    transform: translateX(-40px);
+}
+
+/* Styles for the hamburger icon */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: black;
+}
+
+/* Existing styles remain the same */
+
+/* Media query for small screens (phones) */
+@media (max-width: 768px) {
+    /* Header and Navigation */
+    .header {
+        padding: 10px;
+    }
+
+    /* Align the hamburger icon with the logo */
+    .nav-icons {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    /* Hide navigation links and show hamburger on smaller screens */
+    .navigation {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
+    .nav-btn {
+        font-size: 18px;
+        padding: 10px;
+        margin-left: -150px;
+    }
+
+    /* Hamburger menu icon */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 8px;
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -8px;
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+    }
+
+    .welcome-message {
+        font-size: 40px;
+    }
+
+    .subtext {
+        font-size: 14px;
+    }
+
+    .cta-button {
+        padding: 12px 20px;
+        font-size: 14px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .welcome-container {
+        margin-top: 200px;
+    }
+
+    footer {
+        display: none;
+    }
+    
 }
 

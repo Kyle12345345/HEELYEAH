@@ -1,3 +1,10 @@
+function toggleMenu() {
+  const nav = document.getElementById('navMenu');
+  const hamburger = document.querySelector('.hamburger');
+  nav.classList.toggle('active');
+  hamburger.classList.toggle('active');
+}
+
 const container = document.getElementById("container");
 const registerBtn = document.getElementById("register");
 const loginBtn = document.getElementById("login");

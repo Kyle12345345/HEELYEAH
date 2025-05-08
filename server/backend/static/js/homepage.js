@@ -64,3 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 300);
     });
 });
+
+function toggleMenu() {
+    const nav = document.getElementById('navMenu');
+    const hamburger = document.querySelector('.hamburger');
+    nav.classList.toggle('active');
+    hamburger.classList.toggle('active');
+}

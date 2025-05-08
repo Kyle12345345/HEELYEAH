@@ -1,3 +1,10 @@
+function toggleMenu() {
+    const nav = document.getElementById('navMenu');
+    const hamburger = document.querySelector('.hamburger');
+    nav.classList.toggle('active');
+    hamburger.classList.toggle('active');
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const usernameElement = document.getElementById('username');
     const logoutBtn = document.getElementById('logoutBtn');

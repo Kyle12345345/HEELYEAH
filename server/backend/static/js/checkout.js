@@ -1,3 +1,10 @@
+function toggleMenu() {
+    const nav = document.getElementById('navMenu');
+    const hamburger = document.querySelector('.hamburger');
+    nav.classList.toggle('active');
+    hamburger.classList.toggle('active');
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
     const orderSummaryDiv = document.getElementById('order-summary');
     const trackingInfoDiv = document.getElementById('tracking-info');
@@ -159,4 +166,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 });
+
+
 

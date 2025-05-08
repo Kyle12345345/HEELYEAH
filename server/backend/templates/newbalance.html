@@ -18,46 +18,50 @@
 <body>
 
 
-    <nav class="header">
+    <header class="header">
         <div class="logo">
             <a href="{{ url_for('views.homepage') }}">
                 <img src="{{ url_for('static', filename='images/logo.jpg') }}" width="170" height="50" alt="logo">
             </a>
         </div>
-
-        <div id="cart-alert" style="display: none;" class="alert">
-            Product is added to your cart successfully.
-          </div>
-          
-
-        <div class="navigation">
-            <a href="{{ url_for('views.men')}}"><button class="nav-btn">Men</button></a>
-            <a href="{{ url_for('views.women')}}"><button class="nav-btn">Women</button></a>
-            
+    
+        <button class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+    
+        <nav class="navigation" id="navMenu">
+            <a href="{{ url_for('views.men') }}"><button class="nav-btn">Men</button></a>
+            <a href="{{ url_for('views.women') }}"><button class="nav-btn">Women</button></a>
+    
             <div class="dropdown">
                 <button class="nav-btn dropdown-btn">Brands</button>
                 <ul class="dropdown-menu">
-                    <li><a href="{{ url_for('views.nike')}}">Nike</a></li>
-                    <li><a href="{{ url_for('views.adidas')}}">Adidas</a></li>
-                    <li><a href="{{ url_for('views.newbalance')}}">New Balance</a></li>
-                    <li><a href="{{ url_for('views.converse')}}">Converse</a></li>
-                    <li><a href="{{ url_for('views.puma')}}">Puma</a></li>
+                    <li><a href="{{ url_for('views.nike') }}">Nike</a></li>
+                    <li><a href="{{ url_for('views.adidas') }}">Adidas</a></li>
+                    <li><a href="{{ url_for('views.newbalance') }}">New Balance</a></li>
+                    <li><a href="{{ url_for('views.converse') }}">Converse</a></li>
+                    <li><a href="{{ url_for('views.puma') }}">Puma</a></li>
                 </ul>
             </div>
-        </div>
-
-        <div class="nav-icons">
-            <a href="{{ url_for('auth.profile') if session.get('logged_in') else url_for('auth.login') }}">
-                <i class="fas fa-user"></i>
-            </a>
-            <a href="{{ url_for('views.cart') }}"><i class="fas fa-shopping-cart"></i></a>
-            {% if session.get('logged_in') %}
-            <a href="{{ url_for('auth.logout') }}" id="logout-btn">
-                <i class="fas fa-sign-out-alt"></i>
-            </a>
-            {% endif %}
-        </div>
-    </nav><br>
+    
+            <!-- Icons now inside the hamburger nav -->
+            <div class="nav-icons">
+                <a href="{{ url_for('auth.profile') if session.get('logged_in') else url_for('auth.login') }}">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="{{ url_for('views.cart') }}"><i class="fas fa-shopping-cart"></i></a>
+                {% if session.get('logged_in') %}
+                    <a href="{{ url_for('auth.logout') }}" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+    
+    <br>
 
     <section class="gender-section">
         <div class="nike-logo">

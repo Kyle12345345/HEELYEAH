@@ -1,3 +1,10 @@
+function toggleMenu() {
+    const nav = document.getElementById('navMenu');
+    const hamburger = document.querySelector('.hamburger');
+    nav.classList.toggle('active');
+    hamburger.classList.toggle('active');
+}
+
 let currentIndex = 0;
 let currentPage = 0;
 let products = [];
