@@ -42,7 +42,6 @@
                 </ul>
             </div>
     
-            <!-- Icons now inside the hamburger nav -->
             <div class="nav-icons">
                 <a href="{{ url_for('auth.profile') if session.get('logged_in') else url_for('auth.login') }}">
                     <i class="fas fa-user"></i>
@@ -61,7 +60,7 @@
 
     <main>
         <section class="cart" id="cart">
-          <!-- Cart items will be loaded here from localStorage -->
+          
           <div id="cartTotal" class="cart-total"></div>
         </section>
     

@@ -42,7 +42,7 @@
                 </ul>
             </div>
     
-            <!-- Icons now inside the hamburger nav -->
+            
             <div class="nav-icons">
                 <a href="{{ url_for('auth.profile') if session.get('logged_in') else url_for('auth.login') }}">
                     <i class="fas fa-user"></i>
@@ -64,7 +64,7 @@
       
         <div class="cards-grid">
       
-          <!-- Shipping Details Card -->
+          
           <div class="card">
             <h2>Shipping Details</h2>
             <form id="address-form">
@@ -79,20 +79,20 @@
             <div id="saved-address" ></div>
           </div>
       
-          <!-- Order Summary Card -->
+          
           <div class="card">
             <h2>Order Summary</h2>
             <div id="order-summary">
-              <!-- Product details will be injected here -->
+              
             </div>
           </div>
       
-          <!-- Tracking Details Card -->
+          
           <div class="card">
             <h2>Tracking Details</h2>
             
             <div id="tracking-info">
-              <!-- Tracking steps will be injected here -->
+              
             </div>
           
             <div class="place-order-container">

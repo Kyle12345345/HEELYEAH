@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const savedAddressDiv = document.getElementById('saved-address');
     const placeOrderBtn = document.getElementById('place-order-btn');
 
-    // Retrieve saved address from localStorage (per user)
     const loggedInUserId = localStorage.getItem('loggedInUserId');
     const addressKey = `savedAddress_${loggedInUserId}`;
     const savedAddress = JSON.parse(localStorage.getItem(addressKey));
@@ -33,11 +32,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         inputs.forEach(input => input.value = '');
     }
 
-    // Get **checkoutCart** items from localStorage
+    
     const cartData = JSON.parse(localStorage.getItem("checkoutCart")) || [];
     let total = 0;
 
-    // Loop through cart items and display them in the checkout summary
+    
     cartData.forEach((item, index) => {
         const quantity = item.quantity || 1;
         const priceNumber = parseFloat(item.price.toString().replace(/[^\d.]/g, ""));
@@ -61,15 +60,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         orderSummaryDiv.appendChild(itemElement);
 
-        total += subtotal;  // Add to the total
+        total += subtotal;  
     });
 
-    // Add the total to the order summary
+    
     const totalDiv = document.createElement('div');
     totalDiv.innerHTML = `<h3>Total: ₱${total.toLocaleString()}</h3>`;
     orderSummaryDiv.appendChild(totalDiv);
 
-    // Tracking Details (Example static steps)
+    
     const trackingSteps = ["Order Created"];
     trackingSteps.forEach(step => {
         const div = document.createElement('div');
@@ -78,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         trackingInfoDiv.appendChild(div);
     });
 
-    // Save Shipping Address
+    
     addressForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -113,11 +112,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     placeOrderBtn.addEventListener('click', () => {
-        const orderId = Math.floor(Math.random() * 1000000); // Random Order ID for demonstration
+        const orderId = Math.floor(Math.random() * 1000000); 
         const currentDate = new Date().toLocaleDateString('en-PH', {
             year: 'numeric', month: 'long', day: 'numeric'
         });
-        const userName = localStorage.getItem('loggedInUserName');  // Assuming this is stored when the user logs in
+        const userName = localStorage.getItem('loggedInUserName');  
         const fullAddress = savedAddress ? savedAddress : "No address provided";
         
         const receiptHTML = `
@@ -159,10 +158,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         popup.innerHTML = receiptHTML;
         document.body.appendChild(popup);
         
-        // Close button functionality (Redirect to homepage)
+        
         const closeButton = popup.querySelector('.close-btn');
         closeButton.addEventListener('click', () => {
-            window.location.href = '/'; // Redirect to homepage (change this URL if needed)
+            window.location.href = '/'; 
         });
     });
 });

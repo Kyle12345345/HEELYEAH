@@ -14,24 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let checkboxStates = {};
 
-  // Check if the user is logged in by calling Flask's /check-login route
   async function isUserLoggedIn() {
     try {
       const response = await fetch('/check-login', {
         method: 'GET',
-        credentials: 'same-origin'  // Ensures cookies/session are sent with the request
+        credentials: 'same-origin'  
       });
 
       const data = await response.json();
 
-      return data.loggedIn; // Returns true if logged in, false otherwise
+      return data.loggedIn; 
     } catch (error) {
       console.error("Error checking login status:", error);
-      return false;  // Default to false if there is an error
+      return false;  
     }
   }
 
-  // Update Cart Count
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartCount = document.querySelector(".cart-count");
@@ -41,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Render Cart
+ 
   function renderCart() {
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     cartContainer.innerHTML = "";
@@ -108,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTotal();
   }
 
-  // Setup Checkbox Events
+  
   function setupCheckboxEvents() {
     const itemCheckboxes = document.querySelectorAll(".item-checkbox");
 
@@ -139,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Check if All Items are Selected
+  
   function checkAllSelected() {
     const itemCheckboxes = document.querySelectorAll(".item-checkbox");
     if (selectAllCheckbox) {
@@ -147,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Update Total Amount
+  
   function updateTotal() {
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     let total = 0;
@@ -167,25 +165,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Delete Selected Items
+  
   if (deleteSelectedBtn) {
     deleteSelectedBtn.addEventListener("click", () => {
       let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
       const itemCheckboxes = document.querySelectorAll(".item-checkbox");
 
-      // Filter out only the checked (selected) items to remove them
       const updatedCartItems = cartItems.filter((_, index) => {
         const checkbox = document.querySelector(`#checkbox-${index}`);
-        return checkbox && !checkbox.checked;  // Keep only unchecked items
+        return checkbox && !checkbox.checked;  
       });
 
       localStorage.setItem("cart", JSON.stringify(updatedCartItems));
-      checkboxStates = {};  // Reset checkbox states
+      checkboxStates = {}; 
       renderCart();
     });
   }
 
-  // Checkout Button
+  
   const checkoutBtn = document.querySelector(".checkout");
 
   if (checkoutBtn) {
@@ -203,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
       const selectedItems = [];
 
-      // Collect only the selected items
+      
       document.querySelectorAll(".item-checkbox").forEach((checkbox) => {
         if (checkbox.checked) {
           const index = parseInt(checkbox.dataset.index);
@@ -216,19 +213,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Store the selected items in the checkoutCart
+      
       localStorage.setItem("checkoutCart", JSON.stringify(selectedItems));
 
-      // Filter out only the unchecked (unselected) items to stay in the cart
+      
       const updatedCartItems = cartItems.filter((_, index) => {
         const checkbox = document.querySelector(`#checkbox-${index}`);
-        return checkbox && !checkbox.checked;  // Keep only the unchecked items
+        return checkbox && !checkbox.checked;  
       });
 
-      // Update the cart in localStorage
+      
       localStorage.setItem("cart", JSON.stringify(updatedCartItems));
 
-      // Redirect to checkout page
+      
       window.location.href = "/checkout";
     });
   }

@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderPage(page) {
         productContainer.innerHTML = "";
 
-        // No filtering by gender now, just display all products
+    
         let filteredProducts = products;
 
         const start = page === 0 ? 0 : 28;
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCartCount();
 
-    // ✅ Fetch data from backend
+    
     fetch('/gender/products?gender=women')
         .then(response => response.json())
         .then(data => {

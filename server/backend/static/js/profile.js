@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const logoutBtn = document.getElementById('logoutBtn');
 
     if (!usernameElement.textContent.trim()) {
-        window.location.href = '/login'; // Redirect to login page if no username found.
+        window.location.href = '/login'; 
     }
 
     logoutBtn.addEventListener('click', function () {

@@ -39,7 +39,6 @@ ul:hover a:hover {
     box-shadow: 0 2px 0 0 currentColor;
 }
 
-/* Navigation container */
 .navigation {
     list-style: none;
     display: flex;
@@ -49,7 +48,6 @@ ul:hover a:hover {
     transform: translateX(-40px);
 }
 
-/* Styling for navigation buttons */
 .nav-btn {
     font-family: "Inter";
     font-size: 16px;
@@ -60,7 +58,6 @@ ul:hover a:hover {
     transition: color 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Hover effect like the previous <a> tags */
 .nav-btn:hover {
     color: #000000;
     box-shadow: 0 2px 0 0 currentColor;
@@ -80,12 +77,10 @@ ul:hover a:hover {
     z-index: 1000;
 }
 
-/* Dropdown container */
 .dropdown {
     position: relative;
 }
 
-/* Dropdown menu */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -181,10 +176,10 @@ footer {
     color: white;
     padding: 20px;
     width: 100%;
-    position: fixed; /* Fixes the footer at the bottom */
-    bottom: 0; /* Positions the footer at the bottom */
-    left: 0; /* Ensures it spans the entire width of the page */
-    z-index: 1000; /* Ensures it stays on top of other elements */
+    position: fixed;
+    bottom: 0; 
+    left: 0; 
+    z-index: 1000; 
     height: 100px;
 }
 
@@ -259,10 +254,10 @@ footer {
     color: white;
 }
 
-/* Remove the underline on hover */
+
 .footer-section ul li a::after {
     content: "";
-    display: none; /* Hide the line */
+    display: none; 
 }
 
 body{
@@ -499,7 +494,6 @@ body{
     font-size: 10px;
 }
 
-/* Hide the navigation links by default on mobile */
 .navigation {
     display: flex;
     gap: 15px;
@@ -508,7 +502,6 @@ body{
     transform: translateX(-40px);
 }
 
-/* Styles for the hamburger icon */
 .hamburger {
     display: none;
     background: none;
@@ -518,23 +511,18 @@ body{
     color: black;
 }
 
-/* Existing styles remain the same */
-
-/* Media query for small screens (phones) */
 @media (max-width: 768px) {
-    /* Header and Navigation */
+    
     .header {
         padding: 10px;
     }
 
-    /* Align the hamburger icon with the logo */
     .nav-icons {
         display: flex;
         gap: 20px;
         margin-top: 20px;
     }
 
-    /* Hide navigation links and show hamburger on smaller screens */
     .navigation {
         display: none;
         flex-direction: column;
@@ -563,7 +551,6 @@ body{
         margin-left: -170px;
     }
 
-    /* Hamburger menu icon */
     .hamburger {
         display: block;
         cursor: pointer;
@@ -602,7 +589,6 @@ body{
         height: auto;
     }
 
-    /* Hide footer on mobile */
     footer {
         display: none;
     }

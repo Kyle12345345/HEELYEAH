@@ -20,7 +20,7 @@ def login():
 
         if existing_user:
             if check_password_hash(existing_user.password, password):
-                session['logged_in'] = True  # Mark user as logged in
+                session['logged_in'] = True 
                 session['user_name'] = existing_user.username
                 if request.is_json:
                     return jsonify(success=True)
@@ -58,7 +58,7 @@ def signup():
             new_user = User(username=name, email=email, password=hashed_password)
             db.session.add(new_user)
             db.session.commit()
-            return redirect(url_for('auth.login'))  # Redirect to login after successful signup
+            return redirect(url_for('auth.login')) 
         else:
             flash('User already exists', category='error')
 
@@ -66,7 +66,7 @@ def signup():
 
 @auth.route('/logout')
 def logout():
-    session.pop('logged_in', None)  # Remove session variables on logout
+    session.pop('logged_in', None)  
     session.pop('user_name', None)
     return redirect(url_for('auth.login'))
 
@@ -78,5 +78,5 @@ def profile():
 
 @auth.route('/place_order', methods=['GET', 'POST'])
 def place_order():
-    # Process order logic (e.g., save order to database)
+    
     return redirect(url_for('views.homepage'))

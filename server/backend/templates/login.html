@@ -41,7 +41,7 @@
                 </ul>
             </div>
     
-            <!-- Icons now inside the hamburger nav -->
+            
             <div class="nav-icons">
                 <a href="{{ url_for('auth.profile') if session.get('logged_in') else url_for('auth.login') }}">
                     <i class="fas fa-user"></i>
@@ -59,7 +59,7 @@
     <br>
 
     <div class="container" id="container">
-        <!-- Sign Up Form -->
+        
         <div class="form-container sign-up">
 
 
@@ -76,7 +76,7 @@
             </form>
         </div>
 
-        <!-- Sign In Form -->
+        
         <div class="form-container sign-in">
             <form action="/login" method="post">
                 <h1>Sign In</h1>
@@ -90,7 +90,7 @@
             </form>
         </div>
 
-        <!-- Toggle Container -->
+        
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">

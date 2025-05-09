@@ -38,7 +38,6 @@ ul:hover a:hover {
     box-shadow: 0 2px 0 0 currentColor;
 }
 
-/* Navigation container */
 .navigation {
     list-style: none;
     display: flex;
@@ -48,7 +47,6 @@ ul:hover a:hover {
     transform: translateX(-40px);
 }
 
-/* Styling for navigation buttons */
 .nav-btn {
     font-family: "Inter";
     font-size: 16px;
@@ -59,7 +57,6 @@ ul:hover a:hover {
     transition: color 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Hover effect like the previous <a> tags */
 .nav-btn:hover {
     color: #000000;
     box-shadow: 0 2px 0 0 currentColor;
@@ -79,12 +76,10 @@ ul:hover a:hover {
     z-index: 1000;
 }
 
-/* Dropdown container */
 .dropdown {
     position: relative;
 }
 
-/* Dropdown menu */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -190,10 +185,10 @@ footer {
     color: white;
     padding: 20px;
     width: 100%;
-    position: fixed; /* Fixes the footer at the bottom */
-    bottom: 0; /* Positions the footer at the bottom */
-    left: 0; /* Ensures it spans the entire width of the page */
-    z-index: 1000; /* Ensures it stays on top of other elements */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .footer-content {
@@ -266,15 +261,11 @@ footer {
     color: white;
 }
 
-/* Remove the underline on hover */
 .footer-section ul li a::after {
     content: "";
-    display: none; /* Hide the line */
+    display: none;
 }
 
-
-
-/* Footer Specific Styles for FAQ and Contact Us Pages */
 .contact-container, .faq-container {
     max-width: 1200px;
     margin: 40px auto;
@@ -282,35 +273,33 @@ footer {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Ensure text is centered */
+    text-align: center;
 }
 
-/* Consistent Font Sizes for FAQ and Contact Us */
 .contact-container h2, .faq-container h2 {
-    font-size: 1.6rem; /* Smaller font size */
+    font-size: 1.6rem; 
     color: #333;
     margin-bottom: 20px;
 }
 
 .contact-container p, .faq-container p {
-    font-size: 1rem; /* Smaller font size */
+    font-size: 1rem; 
     color: #555;
     margin-bottom: 30px;
 }
 
 .contact-details h3, .faq-item h3 {
-    font-size: 1.2rem; /* Smaller size */
+    font-size: 1.2rem;
     color: #464646;
     margin-bottom: 10px;
 }
 
 .contact-details p, .faq-item p {
-    font-size: 1rem; /* Smaller size */
+    font-size: 1rem;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Contact Us and FAQ Social Media Icons */
 .contact-details ul, .faq-container ul {
     list-style: none;
     padding: 0;
@@ -324,16 +313,15 @@ footer {
 }
 
 .contact-details ul li a, .faq-container ul li a {
-    font-size: 1rem; /* Reduced size */
+    font-size: 1rem; 
     color: #333;
     
 }
 
 .contact-details ul li a:hover, .faq-container ul li a:hover {
-    color: #000000; /* Hover effect color */
+    color: #000000; 
 }
 
-/* Media Queries for Mobile Adjustments */
 @media screen and (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -362,16 +350,16 @@ footer {
 
 .aboutus h2 {
     font-size: 2rem;
-    color: #000000; /* Black color for the title */
-    margin-bottom: 70px; /* Increased bottom margin to add more space below the h2 */
+    color: #000000; 
+    margin-bottom: 70px; 
     text-align: center;
 }
 
 .aboutus p {
     font-size: 1rem;
-    color: #000000; /* Black color for the paragraph text */
-    margin-top: 210px; /* Added top margin for spacing between h2 and p */
-    margin-bottom: 30px; /* Increased bottom margin for better spacing */
+    color: #000000; 
+    margin-top: 210px; 
+    margin-bottom: 30px; 
     padding: 0 15px;
     text-align: justify;
 }
@@ -384,25 +372,25 @@ footer {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     margin-top: 110px;
-    margin-bottom: 40px; /* Increased bottom margin for better spacing */
+    margin-bottom: 40px; 
 }
 
 .terms-conditions h2 {
-    font-size: 1.8rem; /* Reduced size */
-    color: #000000; /* Black color for the title */
+    font-size: 1.8rem; 
+    color: #000000; 
     margin: 20px 0;
     text-align: center;
 }
 
 .terms-conditions h3 {
-    font-size: 1.4rem; /* Reduced size */
-    color: #333; /* Dark gray for section titles */
+    font-size: 1.4rem; 
+    color: #333; 
     margin-top: 30px;
     margin-bottom: 10px;
 }
 
 .terms-conditions p {
-    font-size: 0.9rem; /* Reduced size */
+    font-size: 0.9rem; 
     color: #000000;
     margin-bottom: 15px;
     line-height: 1.6;
@@ -417,7 +405,7 @@ footer {
 }
 
 .terms-conditions ul li {
-    font-size: 0.9rem; /* Reduced size */
+    font-size: 0.9rem; 
     color: #000000;
 }
 
@@ -427,13 +415,13 @@ footer {
     padding: 40px;
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow to make the content pop */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .terms-conditions {
-    background-color: #ffffff; /* White background for content */
+    background-color: #ffffff; 
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow to make the content pop */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     padding: 40px;
     margin: 40px auto;
     max-width: 1000px;
@@ -447,27 +435,27 @@ footer {
     padding: 40px;
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     margin-top: 100px;
     margin-bottom: 150px;
 }
 
 .privacy-policy h2 {
-    font-size: 1.8rem; /* Reduced size */
-    color: #000000; /* Black color for the title */
+    font-size: 1.8rem; 
+    color: #000000; 
     margin: 20px 0;
     text-align: center;
 }
 
 .privacy-policy h3 {
-    font-size: 1.4rem; /* Reduced size */
-    color: #333; /* Dark gray for section titles */
+    font-size: 1.4rem; 
+    color: #333; 
     margin-top: 30px;
     margin-bottom: 10px;
 }
 
 .privacy-policy p {
-    font-size: 0.9rem; /* Reduced size */
+    font-size: 0.9rem; 
     color: #000000;
     margin-bottom: 15px;
     line-height: 1.6;
@@ -482,11 +470,11 @@ footer {
 }
 
 .privacy-policy ul li {
-    font-size: 0.9rem; /* Reduced size */
+    font-size: 0.9rem; 
     color: #000000;
 }
 
-/* General FAQ Styling */
+
 .faq-container {
     max-width: 1200px;
     margin: 40px auto;
@@ -499,33 +487,33 @@ footer {
 }
 
 .faq-container h2 {
-    font-size: 1.8rem; /* Reduced font size */
+    font-size: 1.8rem; 
     color: #333;
     text-align: center;
     margin-bottom: 30px;
 }
 
-/* Individual FAQ item */
+
 .faq-item {
     margin-bottom: 20px;
 }
 
 .faq-item h3 {
-    font-size: 1.4rem; /* Reduced font size */
-    color: #676767;  /* Slightly darker color for questions */
+    font-size: 1.4rem; 
+    color: #676767;
     cursor: pointer;
     margin-bottom: 10px;
     transition: color 0.3s ease;
 }
 
 .faq-item p {
-    font-size: 0.9rem; /* Smaller font for answers */
+    font-size: 0.9rem;
     color: #000000;
     line-height: 1.6;
     margin-left: 20px;
 }
 
-/* General Contact Container */
+
 .contact-container {
     max-width: 1200px;
     margin: 40px auto;
@@ -537,49 +525,46 @@ footer {
     margin-bottom: 150px;
 }
 
-/* Contact Heading */
+
 .contact-container h2 {
-    font-size: 1.6rem; /* Reduced size */
+    font-size: 1.6rem; 
     color: #333;
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Contact Description Text */
+
 .contact-container p {
-    font-size: 0.9rem; /* Reduced size */
+    font-size: 0.9rem; 
     color: #555;
     text-align: center;
     margin-bottom: 30px;
 }
 
-/* Contact Details Section */
 .contact-details {
     margin-bottom: 40px;
-    text-align: center; /* Centers the content */
+    text-align: center; 
 }
 
 .contact-details h3 {
-    font-size: 1.2rem; /* Smaller size */
+    font-size: 1.2rem;
     color: #464646;
     margin-bottom: 10px;
 }
 
-/* Contact Information Text */
 .contact-details p {
-    font-size: 1rem; /* Reduced size */
+    font-size: 1rem; 
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Social Media Links Styling */
 .contact-details ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: inline-flex; /* Center the items */
-    justify-content: center; /* Horizontally center the items */
-    gap: 15px; /* Space between social media icons */
+    display: inline-flex; 
+    justify-content: center;
+    gap: 15px; 
 }
 
 .contact-details ul li {
@@ -587,20 +572,18 @@ footer {
 }
 
 .contact-details ul li a {
-    font-size: 1rem; /* Reduced size */
+    font-size: 1rem; 
     color: #333;
     text-decoration: none;
 }
 
-
-/* Social Media Icons Styling */
 .contact-details ul li a i {
     margin-right: 10px;
-    font-size: 1.5rem; /* Slightly smaller icons */
+    font-size: 1.5rem; 
     vertical-align: middle;
 }
 
-/* Hide the navigation links by default on mobile */
+
 .navigation {
     display: flex;
     gap: 15px;
@@ -609,7 +592,6 @@ footer {
     transform: translateX(-40px);
 }
 
-/* Styles for the hamburger icon */
 .hamburger {
     display: none;
     background: none;
@@ -619,23 +601,20 @@ footer {
     color: black;
 }
 
-/* Existing styles remain the same */
-
-/* Media query for small screens (phones) */
 @media (max-width: 768px) {
-    /* Header and Navigation */
+   
     .header {
         padding: 10px;
     }
 
-    /* Align the hamburger icon with the logo */
+    
     .nav-icons {
         display: flex;
         gap: 20px;
         margin-top: 20px;
     }
 
-    /* Hide navigation links and show hamburger on smaller screens */
+    
     .navigation {
         display: none;
         flex-direction: column;
@@ -664,7 +643,7 @@ footer {
         margin-left: -200px;
     }
 
-    /* Hamburger menu icon */
+    
     .hamburger {
         display: block;
         cursor: pointer;

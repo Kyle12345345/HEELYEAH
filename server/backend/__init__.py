@@ -14,9 +14,6 @@ def create_website():
     from .views import views
     app.register_blueprint(views, url_prefix='/')
 
-
-    # from db_models import 'you tables'
-
     db.init_app(app)
     
     create_database(app)

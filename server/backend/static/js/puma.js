@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCartCount();
 
-    // ✅ Fetch data from backend
+    
     fetch('/products?brand=Puma')
         .then(response => response.json())
         .then(data => {

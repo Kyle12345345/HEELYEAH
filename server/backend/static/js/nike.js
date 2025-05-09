@@ -157,7 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCartCount();
 
-    // ✅ Fetch data from backend
     fetch('/products?brand=Nike')
         .then(response => response.json())
         .then(data => {
