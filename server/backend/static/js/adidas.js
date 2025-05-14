@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const product = paginatedProducts[index];
             const addToCartBtn = productElement.querySelector(".add-btn");
 
-            addToCartBtn.addEventListener("click", () => {
+             addToCartBtn.addEventListener("click", () => {
                 const sizeSelect = productElement.querySelector(".size-dropdown");
                 const selectedSize = sizeSelect.value;
 
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 localStorage.setItem("cart", JSON.stringify(cart));
                 updateCartCount();
-                showCartAlert();
+                showPopup();
             });
         });
 

@@ -233,9 +233,9 @@ footer {
 }
 
 .center-image img {
-    height: 250px;
-    width: 800px;
-    margin-top: -70px;
+    height: 150px;
+    width: 1500px;
+    margin-top: 10px;
 }
 
 .adidas-image img {
@@ -440,15 +440,15 @@ footer {
 
 .popup {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #333;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 15px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     opacity: 0;
-    transform: translateY(20px);
     transition: opacity 0.4s ease, transform 0.4s ease;
     z-index: 9999;
     pointer-events: none;
@@ -456,7 +456,7 @@ footer {
 
 .popup.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, -50%);
 }
 
 .alert {
